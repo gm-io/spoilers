@@ -1,7 +1,7 @@
 import {json, error} from '@sveltejs/kit';
 import { env } from '$env/dynamic/private'
 
-//tmdb docs: https://developer.themoviedb.org/reference/search-multi
+//relevant tmdb docs: https://developer.themoviedb.org/reference/search-multi
 
 // const tmdb_api_key = process.env.TMDB_API_KEY;
 const tmdb_access_token = env.TMDB_ACCESS_TOKEN;
