@@ -30,14 +30,29 @@
         </Ratings>
     </div> -->
 
+    <div class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto px-4 py-10">
+        {#each Array.from({ length: 8 }) as _ , i}
+            <div style=" background-image: url(https://www.themoviedb.org/t/p/w342/p0AtD0ivSlHq2MHY6JFgyhNqAQY.jpg)" class="bg-no-repeat bg-center snap-center shrink-0 card py-20 w-40 md:w-80 text-center" >
+
+                {#if data.movies[i].media_type == "tv"}
+                    <div class="">{data.movies[i].name}</div>
+                    <div class="">{data.movies[i].poster_path}</div>
+
+                {:else}
+                    <div class="p-0 m-0 w-fit bg-red-600">{data.movies[i].title}</div>
+                    <div class="">{data.movies[i].poster_path}</div>
+                {/if}
+            </div>
+        {/each}
+<!-- 
+        {#each }
+        {/each} -->
+
+    </div>
+
+
+
 
 </div>
-<div class="">
-    {#each data.movies as movie}
-        {#if movie.media_type == "tv"}
-            <div class="">{movie.name}</div>
-        {:else}
-            <div class="p-0 m-0 w-fit bg-red-600">{movie.title}</div>
-        {/if}
-    {/each}
-</div>
+
+
