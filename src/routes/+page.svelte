@@ -29,25 +29,35 @@
             <svelte:fragment slot="full">(X)</svelte:fragment>
         </Ratings>
     </div> -->
+    <div class="">
+        <div class="snap-x space-x-3 scroll-px-4 snap-mandatory scroll-smooth flex overflow-x-auto pb-2 gap-7 w-5/6 mx-auto">
+            {#each Array.from({ length: 8 }) as _ , i}
+                <div class="snap-center shrink-0 w-fit text-center" >
+                    <img class="h-72 w-48 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.movies[i].poster_path}`} />
+                    <div class="h-12 w-48 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                        {#if data.movies[i].media_type == "tv"}
+                        <div class="p-0 m-0 text-xs">{data.movies[i].name}</div>
+                        <!-- <div class="">{data.movies[i].poster_path}</div> -->
+                        {:else}
+                        <div class="p-0 m-0 text-xs">{data.movies[i].title}</div>
+                        <!-- <div class="">{data.movies[i].poster_path}</div> -->
+                        {/if}
 
-    <div class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto px-4 py-10">
-        {#each Array.from({ length: 8 }) as _ , i}
-            <div style=" background-image: url(https://www.themoviedb.org/t/p/w342/p0AtD0ivSlHq2MHY6JFgyhNqAQY.jpg)" class="bg-no-repeat bg-center snap-center shrink-0 card py-20 w-40 md:w-80 text-center" >
+                    </div>
+                    {#if data.movies[i].media_type == "tv"}
+                        <!-- <div class="">{data.movies[i].name}</div> -->
+                        <!-- <div class="">{data.movies[i].poster_path}</div> -->
+                    {:else}
+                        <!-- <div class="p-0 m-0 w-fit bg-red-600">{data.movies[i].title}</div> -->
+                        <!-- <div class="">{data.movies[i].poster_path}</div> -->
+                    {/if}
+                </div>
+            {/each}
+    <!-- 
+            {#each }
+            {/each} -->
 
-                {#if data.movies[i].media_type == "tv"}
-                    <div class="">{data.movies[i].name}</div>
-                    <div class="">{data.movies[i].poster_path}</div>
-
-                {:else}
-                    <div class="p-0 m-0 w-fit bg-red-600">{data.movies[i].title}</div>
-                    <div class="">{data.movies[i].poster_path}</div>
-                {/if}
-            </div>
-        {/each}
-<!-- 
-        {#each }
-        {/each} -->
-
+        </div>
     </div>
 
 
