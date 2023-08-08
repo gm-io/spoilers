@@ -22,13 +22,38 @@
                 <div class="">Willkommen Bei Spoilers</div>
                 <LightSwitch />
             </div>
-            <div class="">
-                <div class="flex bg-red-400 w-11/12 mx-auto">
-                    <div class="flex items-center bg-yellow-500 ">Trending Movies</div>
-                    <div class="">
+            <div class="movie-carousel">
+                <div class="flex w-11/12 mx-auto">
+                    <div class="flex items-center flex-col mb-4">
+                        <div class="font-bold h4">Trending/Movies</div>
                         <RadioGroup  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
-                            <RadioItem bind:group={trending_category} name="justify" value={"daily"}>Daily</RadioItem>
-                            <RadioItem bind:group={trending_category} name="justify" value={"weekly"}>Weekly</RadioItem>
+                            <RadioItem bind:group={trending_category} name="justify" value={"daily"}>Today</RadioItem>
+                            <RadioItem bind:group={trending_category} name="justify" value={"weekly"}>7 Days</RadioItem>
+                        </RadioGroup>
+                    </div>
+                </div>
+                <div class="snap-x space-x-1 scroll-px-4 snap-mandatory scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
+                    {#each Array.from({ length: 20 }) as _ , i}
+                        <div class="snap-center shrink-0 w-fit text-center" >
+                            <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.day_trends[i].poster_path}`} />
+                            <div class="h-12 w-32 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                                {#if data.day_trends[i].media_type == "tv"}
+                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].name}</div>
+                                {:else}
+                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].title}</div>
+                                {/if}
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+            </div>
+            <div class="tv-carousel mt-8">
+                <div class="flex w-11/12 mx-auto">
+                    <div class="flex items-center flex-col mb-4">
+                        <div class="font-bold h4">Trending/Movies</div>
+                        <RadioGroup  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
+                            <RadioItem bind:group={trending_category} name="justify" value={"daily"}>Today</RadioItem>
+                            <RadioItem bind:group={trending_category} name="justify" value={"weekly"}>7 Days</RadioItem>
                         </RadioGroup>
                     </div>
                 </div>
