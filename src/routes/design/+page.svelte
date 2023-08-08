@@ -6,7 +6,9 @@
 
 
     let value = { current: 4.5, max: 7 };
-    let trending_category = "weekly"
+    let trending_category_movies = "weekly"
+    let trending_category_series = "weekly"
+
     export let data;
     console.log(data.day_trends)
 
@@ -27,12 +29,12 @@
                     <div class="flex items-center flex-col mb-4">
                         <div class="font-bold h4">Trending/Movies</div>
                         <RadioGroup  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
-                            <RadioItem bind:group={trending_category} name="justify" value={"daily"}>Today</RadioItem>
-                            <RadioItem bind:group={trending_category} name="justify" value={"weekly"}>7 Days</RadioItem>
+                            <RadioItem bind:group={trending_category_movies} name="justify" value={"daily"}>Today</RadioItem>
+                            <RadioItem bind:group={trending_category_movies} name="justify" value={"weekly"}>7 Days</RadioItem>
                         </RadioGroup>
                     </div>
                 </div>
-                <div class="snap-x space-x-1 scroll-px-4 snap-mandatory scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
+                <div class="snap-x space-x-1 scroll-px-4 snap-mandatory hide-scrollba scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
                     {#each Array.from({ length: 20 }) as _ , i}
                         <div class="snap-center shrink-0 w-fit text-center" >
                             <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.day_trends[i].poster_path}`} />
@@ -50,14 +52,14 @@
             <div class="tv-carousel mt-8">
                 <div class="flex w-11/12 mx-auto">
                     <div class="flex items-center flex-col mb-4">
-                        <div class="font-bold h4">Trending/Movies</div>
+                        <div class="font-bold h4">Trending/<span class="">TV Series</span></div>
                         <RadioGroup  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
-                            <RadioItem bind:group={trending_category} name="justify" value={"daily"}>Today</RadioItem>
-                            <RadioItem bind:group={trending_category} name="justify" value={"weekly"}>7 Days</RadioItem>
+                            <RadioItem bind:group={trending_category_series} name="justify" value={"daily"}>Today</RadioItem>
+                            <RadioItem bind:group={trending_category_series} name="justify" value={"weekly"}>7 Days</RadioItem>
                         </RadioGroup>
                     </div>
                 </div>
-                <div class="snap-x space-x-1 scroll-px-4 snap-mandatory scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
+                <div class="snap-x space-x-1 scroll-px-4 snap-mandatory hide-scrollba scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
                     {#each Array.from({ length: 20 }) as _ , i}
                         <div class="snap-center shrink-0 w-fit text-center" >
                             <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.day_trends[i].poster_path}`} />
