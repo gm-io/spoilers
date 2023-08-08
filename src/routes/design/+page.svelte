@@ -52,8 +52,8 @@
             <div class="tv-carousel mt-8">
                 <div class="flex w-11/12 mx-auto">
                     <div class="flex items-center flex-col mb-4">
-                        <div class="font-bold h4">Trending/<span class="">TV Series</span></div>
-                        <RadioGroup  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
+                        <div class="font-bold h4">Trending/<span class="h4">TV Series</span></div>
+                        <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
                             <RadioItem bind:group={trending_category_series} name="justify" value={"daily"}>Today</RadioItem>
                             <RadioItem bind:group={trending_category_series} name="justify" value={"weekly"}>7 Days</RadioItem>
                         </RadioGroup>
