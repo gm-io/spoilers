@@ -1,3 +1,4 @@
 image div dimensions:
 72x48
 60x44
+44x32

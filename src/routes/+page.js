@@ -7,7 +7,7 @@ export async function load({fetch}) {
     const lotr = await fetch(`api/tmdb/search?query=${search}`)
     const res = await lotr.json();
 
-    console.log(res.results)
+    // console.log(res.results)
 
     let movies = res.results
 

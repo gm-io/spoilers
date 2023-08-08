@@ -1,11 +1,14 @@
 <script>
     import { LightSwitch } from '@skeletonlabs/skeleton';
     import { Ratings } from '@skeletonlabs/skeleton';
+    import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+
 
 
     let value = { current: 4.5, max: 7 };
+    let trending_category = "weekly"
     export let data;
-    console.log(data.movies)
+    console.log(data.day_trends)
 
     function iconClick(event) {
 	    value.current = event.detail.index;
@@ -20,15 +23,24 @@
                 <LightSwitch />
             </div>
             <div class="">
+                <div class="flex bg-red-400 w-11/12 mx-auto">
+                    <div class="flex items-center bg-yellow-500 ">Trending Movies</div>
+                    <div class="">
+                        <RadioGroup  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
+                            <RadioItem bind:group={trending_category} name="justify" value={"daily"}>Daily</RadioItem>
+                            <RadioItem bind:group={trending_category} name="justify" value={"weekly"}>Weekly</RadioItem>
+                        </RadioGroup>
+                    </div>
+                </div>
                 <div class="snap-x space-x-1 scroll-px-4 snap-mandatory scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
-                    {#each Array.from({ length: 8 }) as _ , i}
+                    {#each Array.from({ length: 20 }) as _ , i}
                         <div class="snap-center shrink-0 w-fit text-center" >
-                            <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.movies[i].poster_path}`} />
+                            <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.day_trends[i].poster_path}`} />
                             <div class="h-12 w-32 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
-                                {#if data.movies[i].media_type == "tv"}
-                                    <div class="p-0 m-0 text-xs">{data.movies[i].name}</div>
+                                {#if data.day_trends[i].media_type == "tv"}
+                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].name}</div>
                                 {:else}
-                                    <div class="p-0 m-0 text-xs">{data.movies[i].title}</div>
+                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].title}</div>
                                 {/if}
                             </div>
                         </div>
