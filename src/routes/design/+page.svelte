@@ -6,8 +6,7 @@
 
 
     let value = { current: 4.5, max: 7 };
-    let trending_category_movies = "weekly"
-    let trending_category_series = "weekly"
+    let tv_or_movie = "movie"
 
     export let data;
     
@@ -23,53 +22,34 @@
                 <div class="">Willkommen Bei Spoilers</div>
                 <LightSwitch />
             </div>
-            <!-- <div class="movie-carousel">
-                <div class="flex w-11/12 mx-auto">
-                    <div class="flex items-center flex-col mb-4">
-                        <div class="font-bold h4">Trending/Movies</div>
-                        <RadioGroup  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
-                            <RadioItem bind:group={trending_category_movies} name="justify" value={"daily"}>Today</RadioItem>
-                            <RadioItem bind:group={trending_category_movies} name="justify" value={"weekly"}>7 Days</RadioItem>
-                        </RadioGroup>
-                    </div>
-                </div>
-                <div class="snap-x space-x-1 scroll-px-4 snap-mandatory hide-scrollba scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
-                    {#each Array.from({ length: 20 }) as _ , i}
-                        <div class="snap-center shrink-0 w-fit text-center" >
-                            <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.day_trends[i].poster_path}`} />
-                            <div class="h-12 w-32 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
-                                {#if data.day_trends[i].media_type == "tv"}
-                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].name}</div>
-                                {:else}
-                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].title}</div>
-                                {/if}
-                            </div>
-                        </div>
-                    {/each}
-                </div>
-            </div> -->
             <div class="tv-carousel mt-8">
                 <div class="flex w-11/12 mx-auto">
                     <div class="flex items-center flex-col mb-4">
                         <div class="font-bold h4 mb-2">Trending August 2023<span class="h4"></span></div>
                         <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
-                            <RadioItem bind:group={trending_category_series} name="justify" value={"daily"}>Movies</RadioItem>
-                            <RadioItem bind:group={trending_category_series} name="justify" value={"weekly"}>Tv Series</RadioItem>
+                            <RadioItem bind:group={tv_or_movie} name="justify" value={"movie"}>Movies</RadioItem>
+                            <RadioItem bind:group={tv_or_movie} name="justify" value={"tv"}>Tv Series</RadioItem>
                         </RadioGroup>
                     </div>
                 </div>
                 <div class="snap-x space-x-1 scroll-px-4 snap-mandatory hide-scrollba scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
-                    {#each Array.from({ length: 20 }) as _ , i}
-                        <div class="snap-center shrink-0 w-fit text-center" >
-                            <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${data.day_trends[i].poster_path}`} />
-                            <div class="h-12 w-32 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
-                                {#if data.day_trends[i].media_type == "tv"}
-                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].name}</div>
-                                {:else}
-                                    <div class="p-0 m-0 text-xs">{data.day_trends[i].title}</div>
-                                {/if}
-                            </div>
-                        </div>
+                    {#each data.week_trends as content}
+                        {#if content.media_type == "tv" && tv_or_movie == "tv"}
+                            <div class="snap-center shrink-0 w-fit text-center" >
+                                <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                                <div class="h-12 w-32 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                                        <div class="p-0 m-0 text-xs">{content.name}</div>
+                                </div>
+                            </div>  
+                        {/if}
+                        {#if content.media_type == "movie" && tv_or_movie == "movie"}
+                            <div class="snap-center shrink-0 w-fit text-center" >
+                                <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                                <div class="h-12 w-32 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                                        <div class="p-0 m-0 text-xs">{content.title}</div>
+                                </div>
+                            </div>  
+                        {/if}
                     {/each}
                 </div>
             </div>
