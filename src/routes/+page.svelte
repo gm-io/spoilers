@@ -16,17 +16,19 @@
 </script>
 <div class="inset-0 absolute">
     <div class=" h-full flex">
-        <div class="aside bg-green-300 h-full w-0/12 md:w-4/12 lg:w-3/12"></div>
+        <div class="aside bg-[#011642] h-full w-0/12 md:w-4/12 lg:w-3/12"></div>
         <div class="main h-full w-full md:w-8/12 lg:w-9/12">
             <div class="flex space-x-2 justify-end p-8 pb-0">
                 <div class="">Willkommen Bei Spoilers</div>
                 <LightSwitch />
             </div>
-            <div class="tv-carousel mt-8">
+            <div class="searchbar bg-yellow-600 h-64 w-full"></div>
+
+            <div class="tv-carousel mt-2 ">
                 <div class="flex w-11/12 mx-auto">
                     <div class="flex items-center flex-col mb-4">
                         <div class="font-bold h4 mb-2">Trending August 2023<span class="h4"></span></div>
-                        <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">                    
+                        <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">  
                             <RadioItem bind:group={tv_or_movie} name="justify" value={"movie"}>Movies</RadioItem>
                             <RadioItem bind:group={tv_or_movie} name="justify" value={"tv"}>Tv Series</RadioItem>
                         </RadioGroup>
@@ -44,8 +46,8 @@
                         {/if}
                         {#if content.media_type == "movie" && tv_or_movie == "movie"}
                             <div class="snap-center shrink-0 w-fit text-center" >
-                                <img class="h-44 w-32 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
-                                <div class="h-12 w-32 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                                <img class="h-44 w-32 lg:h-72 lg:w-48 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                                <div class="h-12 w-32 lg:w-48 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
                                         <div class="p-0 m-0 text-xs">{content.title}</div>
                                 </div>
                             </div>  
