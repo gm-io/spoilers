@@ -1,5 +1,5 @@
-import {json, error} from '@sveltejs/kit';
-import { env } from '$env/dynamic/private'
+import {error, json} from '@sveltejs/kit';
+import {env} from '$env/dynamic/private'
 
 //relevant tmdb docs: https://developer.themoviedb.org/reference/search-multi
 
@@ -14,7 +14,6 @@ export async function GET({url}) {
     if (!query) {
         throw error(400, 'query must be specified');
     }
-
     const options = {
         method: 'GET',
         headers: {
