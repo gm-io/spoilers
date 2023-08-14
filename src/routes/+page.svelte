@@ -3,6 +3,8 @@
     import { Ratings } from '@skeletonlabs/skeleton';
     import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
+    import SearchBar from '../components/SearchBar.svelte';
+
 
 
     let value = { current: 4.5, max: 7 };
@@ -22,7 +24,9 @@
                 <div class="">Willkommen Bei Spoilers</div>
                 <LightSwitch />
             </div>
-            <div class="searchbar bg-yellow-600 h-64 w-full"></div>
+            <div class="searchbar bg-yellow-600 h-fit w-full">
+                <SearchBar image_url={data.week_trends[6]} />
+            </div>
 
             <div class="tv-carousel mt-2 ">
                 <div class="flex w-11/12 mx-auto">
