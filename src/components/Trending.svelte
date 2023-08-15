@@ -7,8 +7,8 @@
 </script>
 
 <div class="tv-carousel mt-1 ">
-    <div class="flex w-11/12 mx-auto">
-        <div class="flex pl-3 flex-col mb-4 cursor-pointer">
+    <div class="flex full ">
+        <div class="flex flex-col mb-4 pl-3 cursor-pointer">
             <!-- <div class="font-bold h mb-0">Trending August 2023<span class="h4"></span></div> -->
             <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">  
                 <RadioItem bind:group={tv_or_movie} name="justify" value={"movie"}>Trending Movies</RadioItem>
@@ -16,7 +16,8 @@
             </RadioGroup>
         </div>
     </div>
-    <div class="snap-x space-x-1 scroll-px-4 snap-mandatory hide-scrollbar scroll-smooth flex overflow-x-auto gap-4 w-11/12 mx-auto">
+
+    <div class="snap-x space-x-2 scroll-px-4 snap-mandatory hide-scrollbar scroll-smooth flex overflow-x-auto gap-4 w-full mx-auto">
         {#each trending_data.week_trends as content}
             {#if content.media_type == "tv" && tv_or_movie == "tv"}
                 <div class="snap-center shrink-0 w-fit text-center" >

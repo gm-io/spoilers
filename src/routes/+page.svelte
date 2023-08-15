@@ -7,11 +7,11 @@
 
 </script>
 
-<div class="">
+<div class="w-full lg:w-9/12 mx-auto flex flex-col">
+
     <LightSwitch />
-
     <LandingBackdrop image_url={data.week_trends[7]} />
-
-    <Trending trending_data={data} />
-
+    <div class="w-11/12 lg:w-full mx-auto ">
+        <Trending trending_data={data} />
+    </div>
 </div>
