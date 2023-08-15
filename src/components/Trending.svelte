@@ -11,8 +11,8 @@
         <div class="flex flex-col mb-4 pl-3 cursor-pointer">
             <!-- <div class="font-bold h mb-0">Trending August 2023<span class="h4"></span></div> -->
             <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">  
-                <RadioItem bind:group={tv_or_movie} name="justify" value={"movie"}>Trending Movies</RadioItem>
-                <RadioItem bind:group={tv_or_movie} name="justify" value={"tv"}>Trending Series</RadioItem>
+                <RadioItem class="text-sm tracking-tight py-1 font-bold" bind:group={tv_or_movie} name="justify" value={"movie"}>Trending Movies</RadioItem>
+                <RadioItem class="text-sm tracking-tight py-1 font-bold" bind:group={tv_or_movie} name="justify" value={"tv"}>Trending Series</RadioItem>
             </RadioGroup>
         </div>
     </div>
@@ -21,17 +21,17 @@
         {#each trending_data.week_trends as content}
             {#if content.media_type == "tv" && tv_or_movie == "tv"}
                 <div class="snap-center shrink-0 w-fit text-center" >
-                    <img class="h-44 w-32 lg:h-64 lg:w-44 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
-                    <div class="h-12 w-32 mt-4 mb-1 lg:w-44  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 rounded-xl drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                    <div class="h-12 w-32 mt-4 mb-1 lg:w-36 2xl:w-44 bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
                             <div class="p-0 m-0 text-xs">{content.name}</div>
                     </div>
                 </div>  
             {/if}
             {#if content.media_type == "movie" && tv_or_movie == "movie"}
                 <div class="snap-center shrink-0 w-fit text-center" >
-                    <img class="h-44 w-32 lg:h-64 lg:w-44 rounded-xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
-                    <div class="h-12 w-32 lg:w-44 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
-                            <div class="p-0 m-0 text-xs">{content.title}</div>
+                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 rounded-xl drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                    <div class="h-12 w-32 lg:w-36 2xl:w-44 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                            <div class="p-0 m-0 text-xs text-center">{content.title}</div>
                     </div>
                 </div>  
             {/if}

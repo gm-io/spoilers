@@ -2,7 +2,7 @@
     export let image_url;
 </script>
 
-<div class="mb-4 relative">
+<div class="mb-4 relative drop-shadow-lg">
     <div class="absolute inset-0 flex">
         <div class="w-3/4 text h-fit my-auto px-8 py-4 text-white bg-black bg-opacity-0">
             <div class="flex flex-col space-y-4 p-2 bg-opacity-30">
