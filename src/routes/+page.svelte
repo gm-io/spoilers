@@ -7,7 +7,6 @@
     export let data;
 
 </script>
-
 <div class="w-full lg:w-9/12 mx-auto flex flex-col">
     <LightSwitch />
     <SearchBar />
