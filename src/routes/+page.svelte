@@ -3,6 +3,7 @@
 	import Trending from '../components/Trending.svelte';
 	import LandingBackdrop from '../components/LandingBackdrop.svelte';
     import SearchBar from '../components/SearchBar.svelte';
+    import Lhs from '../components/LHS.svelte';
 
     export let data;
 
@@ -17,8 +18,11 @@
 </div> -->
 
 <div class="w-10/12 mx-auto h-[100vh] flex">
-    <div class="w-1/5">LEFT SIDE</div>
-    <div class="w-4/5">
+    <div class="w-1/5 border-r border-black dark:border-gray-200 border-opacity-10 dark:border-opacity-10">
+        <Lhs />
+
+    </div>
+    <div class="px-2 w-4/5">
         <LightSwitch />
         <SearchBar />
         <LandingBackdrop image_url={data.week_trends[7]} />
