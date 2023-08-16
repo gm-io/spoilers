@@ -4,7 +4,8 @@
 	import LandingBackdrop from '../components/LandingBackdrop.svelte';
     import SearchBar from '../components/SearchBar.svelte';
     import Lhs from '../components/LHS.svelte';
-
+	import Header from '../components/Header.svelte';
+    Header
     export let data;
 
 </script>
@@ -16,6 +17,7 @@
         <Trending trending_data={data} />
     </div>
 </div> -->
+<Header />
 
 <div class="w-10/12 mx-auto h-[100vh] flex">
     <div class="w-1/5 border-r border-black dark:border-gray-200 border-opacity-10 dark:border-opacity-10">
