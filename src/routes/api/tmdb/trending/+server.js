@@ -58,7 +58,6 @@ export async function GET({url}) {
         day_trends: movies_daily.results.concat(tv_daily.results),
         week_trends: movies_weekly.results.concat(tv_weekly.results),
     }
-    // console.log(`${}`)
     return json(data);
 
 }
