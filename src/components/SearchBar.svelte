@@ -1,18 +1,27 @@
-<script>
-    export let image_url;
-</script>
-
-<div class="mb-4 relative">
-    <div class="absolute inset-0 flex">
-        <div class="w-10/12 text h-fit my-auto px-8 py-4 text-white bg-black bg-opacity-0">
-            <div class="flex flex-col space-y-4 p-2 bg-opacity-30">
-                <p class="h1 font-bold">{image_url.title}</p>
-                <p class=" text-xs w-full lg:w-2/3">{image_url.overview}</p>
-            </div>
+<!-- <form>   
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <div class="bg-yellow-500 ">   
+            <input type="search" id="default-search" class="block w-10/12 p-4 py-2 pl-10 text-sm text-gray-900 rounded-2xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="search ..." required>
+            <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
         </div>
     </div>
-    <div class="h-96 bg-blac pl-6">
-        <img class="object-cover h-full w-full" alt="The project logo" src={`https://image.tmdb.org/t/p/w1280/i2GVEvltEu3BXn5crBSxgKuTaca.jpg`} />
-    </div>
+</form> -->
+
+<div class="w-full mb-4">
+    <form action="">
+        <div class="w-12/12 mx-auto relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input type="search" id="default-search" class="block w-full p-4 py-2 pl-10 text-sm text-gray-900 rounded-4xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="search ..." required>
+        </div>
+    </form>
 </div>
-<!-- <hr class="h-px ml-6 mt-3 bg-gray-200 border-0 dark:bg-gray-700"> -->

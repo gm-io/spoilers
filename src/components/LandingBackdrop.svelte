@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="h-96 bg-blac">
-        <img class="object-cover h-full w-full" alt="The project logo" src={`https://image.tmdb.org/t/p/w1280/i2GVEvltEu3BXn5crBSxgKuTaca.jpg`} />
+        <img class="object-cover h-full w-full rounded" alt="The project logo" src={`https://image.tmdb.org/t/p/w1280/i2GVEvltEu3BXn5crBSxgKuTaca.jpg`} />
     </div>
 </div>
 <!-- <hr class="h-px ml-6 mt-3 bg-gray-200 border-0 dark:bg-gray-700"> -->
