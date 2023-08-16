@@ -7,13 +7,15 @@
 </script>
 
 <div class="tv-carousel mt-1 ">
-    <div class="flex full ">
+    <div class="flex w-full ">
         <div class="flex flex-col mb-4 pl-3 cursor-pointer">
             <!-- <div class="font-bold h mb-0">Trending August 2023<span class="h4"></span></div> -->
             <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">  
                 <RadioItem class="text-sm tracking-tight py-1 font-bold" bind:group={tv_or_movie} name="justify" value={"movie"}>Trending Movies</RadioItem>
                 <RadioItem class="text-sm tracking-tight py-1 font-bold" bind:group={tv_or_movie} name="justify" value={"tv"}>Trending Series</RadioItem>
             </RadioGroup>
+        </div>
+        <div class=" w-9/12 mx-auto border-t mt-5 border-black border-opacity-10 dark:border-gray-200 dark:border-opacity-10">
         </div>
     </div>
 
