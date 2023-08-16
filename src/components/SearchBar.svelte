@@ -13,7 +13,7 @@
     </div>
 </form> -->
 
-<div class="w-full mb-4 pt-4">
+<div class="w-full mb-4 pt-0">
     <form action="">
         <div class="w-12/12 mx-auto relative">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
