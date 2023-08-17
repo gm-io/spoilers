@@ -22,7 +22,6 @@ function multiColumnRight(){
 					
 </script>
 
-test
 <div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
 	<!-- Button: Left -->
 	<button type="button" class="btn-icon variant-filled" on:click={multiColumnLeft}>
@@ -32,7 +31,10 @@ test
 	<div bind:this={elemMovies} class="snap-x snap-mandatory scroll-smooth flex gap-2 hide-scrollbar pb-2 overflow-x-auto">
         <div class="flex">
             {#each Array.from({ length: 7 }) as _ , i}
-                <div class="">{movie_day_trends[i].title}</div>
+                <div class="">
+                    <!-- {movie_day_trends[i].title} -->
+                    <img class="" src={`https://image.tmdb.org/t/p/w300${movie_day_trends[i].backdrop_path}`} alt="">
+                </div>
             {/each}
         </div>
 	</div>
