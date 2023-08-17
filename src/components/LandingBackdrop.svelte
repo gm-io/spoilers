@@ -1,6 +1,8 @@
 <script>
     export let image_url;
+    export let backdrop_data;
     import CarouselBackdrop from "./CarouselBackdrop.svelte";
+    console.log(backdrop_data)
 </script>
 
 <div class="relative w-full">

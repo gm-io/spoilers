@@ -10,7 +10,7 @@
 <Header />
 <div class="w-full lg:w-9/12 mx-auto flex flex-col">
     <SearchBar />
-    <LandingBackdrop image_url={data.week_trends[7]} />
+    <LandingBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
     <div class="w-11/12 lg:w-full mx-auto ">
         <Trending trending_data={data} />
     </div>
