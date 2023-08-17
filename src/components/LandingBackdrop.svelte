@@ -1,10 +1,11 @@
 <script>
     export let image_url;
+    import CarouselBackdrop from "./CarouselBackdrop.svelte";
 </script>
 
 <div class="relative w-full">
     <div class="absolute bg-yellow-300 right-0 bottom-0 z-50 w-1/2 h-1/3 m-8">
-        hello
+        <CarouselBackdrop />
     </div>
     <div class="mb-4 relative drop-shadow-lg">
         <div class="absolute inset-0 flex">
