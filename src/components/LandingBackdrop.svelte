@@ -3,11 +3,13 @@
     export let backdrop_data;
     import CarouselBackdrop from "./CarouselBackdrop.svelte";
     console.log(backdrop_data)
+
+
 </script>
 
 <div class="relative w-full">
     <div class="absolute bg-yellow-300 right-0 bottom-0 z-50 w-1/2 h-1/3 m-8">
-        <CarouselBackdrop />
+        <CarouselBackdrop day_trends={backdrop_data.day_trends} />
     </div>
     <div class="mb-4 relative drop-shadow-lg">
         <div class="absolute inset-0 flex">

@@ -1,6 +1,11 @@
 <script>
-    
 let elemMovies;
+export let day_trends;
+console.log(day_trends)
+
+let movie_day_trends = day_trends.filter(x =>(x.media_type == "movie"))
+
+console.log(movie_day_trends)
 
 function multiColumnLeft(){
 	let x = elemMovies.scrollWidth;
@@ -25,22 +30,11 @@ test
 	</button>
 	<!-- Carousel -->
 	<div bind:this={elemMovies} class="snap-x snap-mandatory scroll-smooth flex gap-2 hide-scrollbar pb-2 overflow-x-auto">
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-green-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-green-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-        <div class="h-20 w-20 bg-gray-400">test</div>
-
+        <div class="flex">
+            {#each Array.from({ length: 7 }) as _ , i}
+                <div class="">{movie_day_trends[i].title}</div>
+            {/each}
+        </div>
 	</div>
 	<!-- Button-Right -->
 	<button type="button" class="btn-icon variant-filled" on:click={multiColumnRight}>
