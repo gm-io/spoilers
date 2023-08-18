@@ -5,18 +5,6 @@ export async function load({fetch, params}) {
     // const movie_id = parseInt(params.slug, 10)
     const movie_id = params.slug
     let tmdb_response;
-    // if (params.slug === 'hello-world') {
-    //     return {
-    //         title: 'Hello world!',
-    //         content: 'Welcome to our blog. Lorem ipsum dolor sit amet...'
-    //     };
-    // }
-
-    // const lotr = await fetch(`api/tmdb/search?query=${search}`)
-    // const res = await lotr.json();
-    //
-    // const trending = await fetch(`api/tmdb/trending`)
-    // const res_trending = await trending.json()
 
     await fetch(`../../../api/tmdb/movie/${movie_id}`)
         .then(response => {
