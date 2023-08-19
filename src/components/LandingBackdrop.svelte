@@ -5,7 +5,7 @@
     console.log("backdrop data:",backdrop_data)
 
     let movie_day_trends = backdrop_data.day_trends.filter(x =>(x.media_type == "movie"))
-
+    let current = 0;
 
     let elemCarousel;
 
@@ -33,36 +33,15 @@
 <div class="relative w-full">
     <div class="mb-4 relative drop-shadow-lg">
         <div class="absolute inset-0 flex">
-            <div class="w-3/4 text h-fit my-auto px-8 py-4 text-white bg-black bg-opacity-0">
+            <div class="w-3/4 text h-fit my-auto px-8 py-4 text-white bg-black bg-opacity-10">
                 <div class="flex flex-col space-y-4 p-2 bg-opacity-30">
-                    <p class="h1 font-bold">{image_url.title}</p>
-                    <p class=" text-xs w-full lg:w-2/3">{image_url.overview}</p>
+                    <p class="h1 font-bold">{movie_day_trends[current].title}</p>
+                    <p class=" text-xs w-full lg:w-2/3">{movie_day_trends[current].overview}</p>
                 </div>
             </div>
         </div>
-        <!-- <div class="h-96 bg-blac">
-            <img class="object-cover h-full w-full rounded" alt="The project logo" src={`https://image.tmdb.org/t/p/w1280/i2GVEvltEu3BXn5crBSxgKuTaca.jpg`} />
-        </div> -->
-        <div class="car h-96 overflow-y-hidden">
-            <!-- <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
-                <i class="fa-solid fa-arrow-left" />
-            </button> -->
-            <!-- Full Images -->
-            <div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth gap-2 flex overflow-x-aut">
-                {#each Array.from({ length: 7 }) as _ , i}
-                <div class="h-full w-full">
-                    <img
-                        class="w-full h-96 object-cover"
-                        src={`https://image.tmdb.org/t/p/original${movie_day_trends[i].backdrop_path}`}
-                        alt={movie_day_trends[i].title}
-                        loading="lazy"
-                    />
-                </div>
-                {/each}
-            </div>
-            <!-- <button type="button" class="btn-icon variant-filled" on:click={carouselRight}>
-                <i class="fa-solid fa-arrow-right" />
-            </button> -->
+        <div class="h-96 bg-blac">
+            <img class="object-cover h-full w-full rounded" alt="The project logo" src={`https://image.tmdb.org/t/p/original${movie_day_trends[current].backdrop_path}`} />
         </div>
     </div>
 </div>
