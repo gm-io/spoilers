@@ -8,8 +8,6 @@
 
 
     let elemCarousel;
-    const unsplashIds = ['vjUokUWbFOs', '1aJuPtQJX_I', 'Jp6O3FFRdEI', 'I3C_eojFVQY', 's0fXOuyTH1M', 'z_X0PxmBuIQ'];
-
 
     function carouselLeft(){
         const x =
@@ -45,19 +43,21 @@
         <!-- <div class="h-96 bg-blac">
             <img class="object-cover h-full w-full rounded" alt="The project logo" src={`https://image.tmdb.org/t/p/w1280/i2GVEvltEu3BXn5crBSxgKuTaca.jpg`} />
         </div> -->
-        <div class="card h-96 overflow-y-hidden">
+        <div class="car h-96 overflow-y-hidden">
             <!-- <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
                 <i class="fa-solid fa-arrow-left" />
             </button> -->
             <!-- Full Images -->
-            <div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto">
-                {#each unsplashIds as unsplashId}
+            <div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth gap-2 flex overflow-x-aut">
+                {#each Array.from({ length: 7 }) as _ , i}
+                <div class="h-full w-full">
                     <img
-                        class="snap-center w-full h-full object-fit"
-                        src="https://source.unsplash.com/{unsplashId}/1024x768"
-                        alt={unsplashId}
+                        class="w-full h-96 object-cover"
+                        src={`https://image.tmdb.org/t/p/original${movie_day_trends[i].backdrop_path}`}
+                        alt={movie_day_trends[i].title}
                         loading="lazy"
                     />
+                </div>
                 {/each}
             </div>
             <!-- <button type="button" class="btn-icon variant-filled" on:click={carouselRight}>
