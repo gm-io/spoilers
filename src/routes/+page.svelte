@@ -4,6 +4,7 @@
     import SearchBar from '../components/SearchBar.svelte';
     import Lhs from '../components/LHS.svelte';
 	import Header from '../components/Header.svelte';
+    import CascadedCarouselBackdrop from '../components/CascadedCarouselBackdrop.svelte';
     export let data;
 </script>
 
@@ -14,7 +15,10 @@
     <div class="w-11/12 lg:w-full mx-auto ">
         <Trending trending_data={data} />
     </div>
+    <!-- <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} /> -->
+    
 </div>
+
 
     <!-- <Header />
 <div class="w-10/12 mx-auto h-[100vh] flex">
