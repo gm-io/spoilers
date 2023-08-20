@@ -4,7 +4,7 @@
     import { tweened } from 'svelte/motion';
 	import { fade, scale } from 'svelte/transition';
 
-    let original = 1 * 6; // TYPE NUMBER OF SECONDS HERE
+    let original = 1 * 7; // TYPE NUMBER OF SECONDS HERE
 	let timer = tweened(original)
 
     $:current = 0;
@@ -16,43 +16,26 @@
         } else{
             current++
             timer=tweened(original)
+            if (current>=movie_day_trends.length){
+                current = 0
+            }
         }
     }, 1000);
-
-
 
     console.log("backdrop data:",backdrop_data)
 
     let movie_day_trends = backdrop_data.day_trends.filter(x =>(x.media_type == "movie"))
-
-    let elemCarousel;
-
-    function carouselLeft(){
-        const x =
-            elemCarousel.scrollLeft === 0
-                ? elemCarousel.clientWidth * elemCarousel.childElementCount // loop
-                : elemCarousel.scrollLeft - elemCarousel.clientWidth; // step left
-        elemCarousel.scroll(x, 0);
-    }
-
-
-
-    function carouselRight(){
-        const x =
-            elemCarousel.scrollLeft === elemCarousel.scrollWidth - elemCarousel.clientWidth
-                ? 0 // loop
-                : elemCarousel.scrollLeft + elemCarousel.clientWidth; // step right
-        elemCarousel.scroll(x, 0);
-    }
-
+    movie_day_trends = movie_day_trends.slice(0,3)
                         
-		
 </script>
-<progress class="rounded-none" value={$timer/original}></progress>
+<!-- <progress class="rounded-none" value={$timer/original}></progress> -->
 
 {#key current}
 <div in:fade class="relative w-full">
-    <div class="mb-4 relative drop-shadow-lg">
+    <div class="mb-4 relative">
+        <div class="absolute right-0 z-50 w-fit flex items-center px-8 h-full">
+            <img class="h-80 w-64 rounde opacity-80 card drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt="">
+        </div>
         <div class="absolute inset-0 flex items-end">
             <div class="w-[100%] text h-[100%] px-8 py-4 text-white bg-black bg-opacity-30 flex items-center">
                 <div class="flex flex-col space-y-4 p-2 h-fit">
