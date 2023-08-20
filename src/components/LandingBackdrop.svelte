@@ -1,11 +1,29 @@
 <script>
     export let image_url;
     export let backdrop_data;
+    import { tweened } from 'svelte/motion';
+	import { fade, scale } from 'svelte/transition';
+
+    let original = 1 * 6; // TYPE NUMBER OF SECONDS HERE
+	let timer = tweened(original)
+
+    $:current = 0;
+
+
+    setInterval(() => {
+        if ($timer > 0){
+            $timer--;
+        } else{
+            current++
+            timer=tweened(original)
+        }
+    }, 1000);
+
+
 
     console.log("backdrop data:",backdrop_data)
 
     let movie_day_trends = backdrop_data.day_trends.filter(x =>(x.media_type == "movie"))
-    let current = 4;
 
     let elemCarousel;
 
@@ -26,11 +44,14 @@
                 : elemCarousel.scrollLeft + elemCarousel.clientWidth; // step right
         elemCarousel.scroll(x, 0);
     }
+
                         
 		
 </script>
+<progress class="rounded-none" value={$timer/original}></progress>
 
-<div class="relative w-full">
+{#key current}
+<div in:fade class="relative w-full">
     <div class="mb-4 relative drop-shadow-lg">
         <div class="absolute inset-0 flex items-end">
             <div class="w-[100%] text h-[100%] px-8 py-4 text-white bg-black bg-opacity-30 flex items-center">
@@ -52,5 +73,7 @@
         </div>
     </div>
 </div>
+{/key}
+
 
 <!-- <hr class="h-px ml-6 mt-3 bg-gray-200 border-0 dark:bg-gray-700"> -->
