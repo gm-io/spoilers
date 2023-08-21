@@ -1,10 +1,11 @@
-import {json, error} from "@sveltejs/kit";
-import { env } from "$env/dynamic/private"
+import {json} from "@sveltejs/kit";
+import {env} from "$env/dynamic/private"
 
 //relevant tmdb docs: https://developer.themoviedb.org/reference/movie-details
 
 const tmdb_access_token = env.TMDB_ACCESS_TOKEN;
-export async function GET({params}){
+
+export async function GET({params}) {
 
     const movie_id = params.slug;
 
@@ -16,7 +17,7 @@ export async function GET({params}){
         }
     };
 
-    const data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}`, options)
+    const main_data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}`, options)
         .then(res => res.json())
         .then(data => {
             return data;
@@ -24,5 +25,18 @@ export async function GET({params}){
         .catch(err => {
             return err;
         })
-    return json(data);
-    }
+
+    const trailer_data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos`, options)
+        .then(res => res.json())
+        .then(data => {
+            return data
+        })
+        .catch(err => {
+            return err;
+        })
+
+    return json({
+        ...main_data,
+        videos: trailer_data['results']
+    });
+}

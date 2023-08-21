@@ -7,7 +7,7 @@ import {env} from '$env/dynamic/private'
 const tmdb_access_token = env.TMDB_ACCESS_TOKEN;
 
 /** @type {import('./$types').RequestHandler} */
-export async function GET({url}) {
+export async function GET() {
 
 
     const options = {
@@ -17,19 +17,16 @@ export async function GET({url}) {
             Authorization: `Bearer ${tmdb_access_token}`
         }
     };
-
-    const daily = await fetch(`https://api.themoviedb.org/3/trending/all/day`, options)
+    await fetch(`https://api.themoviedb.org/3/trending/all/day`, options)
         .then(res => res.json())
         .then(data => {
             return data;
-        })
-
-    const weekly = await fetch(`https://api.themoviedb.org/3/trending/all/week`, options)
+        });
+    await fetch(`https://api.themoviedb.org/3/trending/all/week`, options)
         .then(res => res.json())
         .then(data => {
             return data;
-        })
-
+        });
     const movies_daily = await fetch(`https://api.themoviedb.org/3/trending/movie/day`, options)
         .then(res => res.json())
         .then(data => {
