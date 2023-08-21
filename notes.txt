@@ -2,3 +2,10 @@ image div dimensions:
 72x48
 60x44
 44x32
+
+todo:
+-put arrows in carousel
+-Find an appopriate font
+-Create a card for empty panes under mini carousel
+-Convert bottom cascade to only show tv shows
+-Expiriment with indivudual component animation within the main carousel on-change
