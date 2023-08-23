@@ -37,6 +37,6 @@ export async function GET({params}) {
 
     return json({
         ...main_data,
-        videos: trailer_data['results']
-    });
+        trailers: trailer_data['results'].filter(video => video['type'] === 'Trailer')
+    })
 }
