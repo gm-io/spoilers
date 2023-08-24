@@ -26,17 +26,25 @@ export async function GET({params}) {
             return err;
         })
 
-    const trailer_data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos`, options)
+    let trailers = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos`, options)
         .then(res => res.json())
         .then(data => {
-            return data
+            return data['results'].filter(video => video['type'] === 'Trailer')
         })
         .catch(err => {
             return err;
         })
 
+    trailers = trailers.map(trailer => {
+        return {
+            ...trailer,
+            link: `https://www.youtube.com/watch?v=${trailer['key']}`
+        }
+
+    })
+
     return json({
         ...main_data,
-        videos: trailer_data['results']
-    });
+        trailers: trailers
+    })
 }
