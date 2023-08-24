@@ -29,17 +29,17 @@
 <!-- <progress class="rounded-none" value={$timer/original}></progress> -->
 
 {#key current}
-<div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10 rounded-lg">
+<div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10">
     <div class=" relative">
         <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50 font-bold">
             <div class="">[-Left-]</div>
             <div class="">[-Right-]</div>
         </div>
-        <div class="absolute right-0 z-40 w-fit flex items-center px-8 pr-14 h-full">
-            <img class="shadow-lg h-80 w-60 rounde opacity-80 card drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
+        <div class="absolute right-0 z-40 w-fit flex items-center px-2 mr-14 2xl:mr-16  h-full">
+            <img class="shadow-lg h-64 w-48 2xl:h-80 2xl:w-60  rounded opacity-80 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
         </div>
         <div class="absolute inset-0 flex items-end">
-            <div class="w-[100%] text h-[100%] px-8 py-4 text-white bg-black bg-opacity-20 rounded-lg flex items-center">
+            <div class="w-[100%] text h-[100%] px-8 py-4 text-white bg-black bg-opacity-20 flex items-center">
                 <div class="flex flex-col space-y-4 p-2 h-fit">
                     <!-- <p class="h1 font-bold text-indigo-400">{movie_day_trends[current].title}</p> -->
                     <p class="h1 font-bold text-white">{movie_day_trends[current].title}</p>
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="h-96 lg:h-[450px] xl:h-[500px] 2xl:h-[600px] bg-blac">
-            <img class=" rounded-lg object-cover h-full w-full rounde" alt="The project logo" src={`https://image.tmdb.org/t/p/original${movie_day_trends[current].backdrop_path}`} />
+            <img class="rounded object-cover h-full w-full rounde" alt="The project logo" src={`https://image.tmdb.org/t/p/original${movie_day_trends[current].backdrop_path}`} />
         </div>
     </div>
 </div>

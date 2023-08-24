@@ -8,32 +8,34 @@
     export let data;
 </script>
 
-<Header />
-<div class="w-full lg:w-9/12 2xl:w-10/12 mx-auto flex flex-col">
-    <SearchBar />
-    <LandingBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
-    <div class="w-11/12 lg:w-full mx-auto ">
-        <Trending trending_data={data} />
-    </div>
-    
-    <!-- <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} /> -->
-    <div class="grid grid-cols-2 gap-4 mb-4 px-4 border- border-gray-200 border-opacity-10 py-6">
-        <div class="flex flex-col card">
-            <div class="bg-pink-300 h-96 card"></div>
-            <div class=""></div>
+<div class="main-container px-1 scrollbar-hidden">
+    <Header />
+    <div class="w-full lg:w-9/12 2xl:w-10/12 mx-auto flex flex-col">
+        <SearchBar />
+        <LandingBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
+        <div class="w-11/12 lg:w-full mx-auto ">
+            <Trending trending_data={data} />
         </div>
-        <div class="flex flex-col card">
-            <div class="bg-pink-300 h-96 card"></div>
-            <div class=""></div>
+        
+        <!-- <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} /> -->
+        <div class="grid grid-cols-2 gap-4 mb-4 px-4 border- border-gray-200 border-opacity-10 py-6">
+            <div class="flex flex-col card">
+                <div class="bg-pink-300 h-96 card"></div>
+                <div class=""></div>
+            </div>
+            <div class="flex flex-col card">
+                <div class="bg-pink-300 h-96 card"></div>
+                <div class=""></div>
+            </div>
         </div>
+
+        
+        <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
+
+        
+
+        
     </div>
-
-    
-    <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
-
-    
-
-    
 </div>
 
 
