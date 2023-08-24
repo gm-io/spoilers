@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="h-96 bg-blac">
+        <div class="h-96 lg:h-[450px] xl:h-[500px] 2xl:h-[600px] bg-blac">
             <img class=" rounded-lg object-cover h-full w-full rounde" alt="The project logo" src={`https://image.tmdb.org/t/p/original${movie_day_trends[current].backdrop_path}`} />
         </div>
     </div>
