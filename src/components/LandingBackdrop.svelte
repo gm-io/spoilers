@@ -31,7 +31,7 @@
 {#key current}
 <div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10 rounded-lg">
     <div class=" relative">
-        <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50">
+        <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50 font-bold">
             <div class="">[-Left-]</div>
             <div class="">[-Right-]</div>
         </div>
