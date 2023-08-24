@@ -9,7 +9,6 @@
 
     $:current = 0;
 
-
     setInterval(() => {
         if ($timer > 0){
             $timer--;
@@ -20,7 +19,7 @@
                 current = 0
             }
         }
-    }, 1000);
+    },1000);
 
     console.log("backdrop data:",backdrop_data)
 
@@ -32,7 +31,11 @@
 {#key current}
 <div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10 rounded-lg">
     <div class=" relative">
-        <div class="absolute right-0 z-50 w-fit flex items-center px-8 pr-14 h-full">
+        <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50">
+            <div class="">[-Left-]</div>
+            <div class="">[-Right-]</div>
+        </div>
+        <div class="absolute right-0 z-40 w-fit flex items-center px-8 pr-14 h-full">
             <img class="shadow-lg h-80 w-60 rounde opacity-80 card drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
         </div>
         <div class="absolute inset-0 flex items-end">
