@@ -5,8 +5,6 @@ image div dimensions:
 
 todo:
 -Find an appopriate font
--Create a card for empty panes under mini carousel
--Convert bottom cascade to only show tv shows
--Expiriment with indivudual component animation within the main carousel on-change
+-Expeiriment with indivudual component animation within the main carousel on-change
 - get icons for trending radio
--make trending radio one line via responsiveness
+-make trending radio one line via responsiveness 
