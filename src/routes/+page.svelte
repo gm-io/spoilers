@@ -27,14 +27,10 @@
                 <div class="bg-pink-300 h-[450px] card"></div>
                 <div class=""></div>
             </div>
-        </div>
-
-        
-        <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
-
-        
-
-        
+        </div>     
+        <div class="px-3">
+            <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
+        </div>   
     </div>
 </div>
 
