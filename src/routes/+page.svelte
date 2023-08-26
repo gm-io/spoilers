@@ -18,13 +18,13 @@
         </div>
         
         <!-- <CascadedCarouselBackdrop backdrop_data={data} image_url={data.week_trends[7]} /> -->
-        <div class="grid grid-cols-2 gap-4 mb-4 px-4 border- border-gray-200 border-opacity-10 py-6">
+        <div class="grid grid-cols-2 gap-4 mb-4 px-4 pb-4 border-gray-200 border-opacity-10 py-0">
             <div class="flex flex-col card">
-                <div class="bg-pink-300 h-96 card"></div>
+                <div class="bg-pink-300 h-[450px] card"></div>
                 <div class=""></div>
             </div>
             <div class="flex flex-col card">
-                <div class="bg-pink-300 h-96 card"></div>
+                <div class="bg-pink-300 h-[450px] card"></div>
                 <div class=""></div>
             </div>
         </div>
