@@ -13,13 +13,34 @@
         if ($timer > 0){
             $timer--;
         } else{
-            current++
-            timer=tweened(original)
-            if (current>=movie_day_trends.length){
-                current = 0
-            }
+            // current++
+            // timer=tweened(original)
+            // if (current>=movie_day_trends.length){
+            //     current = 0
+            // }
+            right_button()
         }
     },1000);
+
+    let left_button = ()=> {
+        if(current <= 0){
+            current = movie_day_trends.length-1
+            timer=tweened(original)
+        }else{
+            current--
+            timer=tweened(original)
+        }
+    }
+
+    let right_button = ()=> {
+        if(current >= movie_day_trends.length-1){
+            current = 0
+            timer=tweened(original)
+        }else{
+            current++
+            timer=tweened(original)
+        }
+    }
 
     console.log("backdrop data:",backdrop_data)
 
@@ -32,8 +53,8 @@
 <div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10">
     <div class=" relative">
         <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50 font-bold">
-            <div class="">[-Left-]</div>
-            <div class="">[-Right-]</div>
+            <div on:click={left_button} class="cursor-pointer">[-Left-]</div>
+            <div on:click={right_button} class="cursor-pointer">[-Right-]</div>
         </div>
         <div class="absolute right-0 z-40 w-fit flex items-center px-2 mr md:mr-6 2xl:mr-16  h-full">
             <img class="shadow-lg h-64 w-48 2xl:h-80 2xl:w-60  rounded opacity-80 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
