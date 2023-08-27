@@ -1,6 +1,6 @@
 <script>
     // using custom theme; loaded here ->
-    import '../theme2.postcss';
+    import '../theme4.postcss';
 
     // This contains the bulk of Skeletons required styles:
     import '@skeletonlabs/skeleton/styles/skeleton.css';
