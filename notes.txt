@@ -8,3 +8,4 @@ todo:
 -Expeiriment with indivudual component animation within the main carousel on-change
 - get icons for trending radio
 -make trending radio one line via responsiveness 
+- add searchbar to header
