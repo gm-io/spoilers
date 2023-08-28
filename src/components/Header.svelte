@@ -2,11 +2,11 @@
     import { LightSwitch } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="flex relative w-full h-fit">
-    <div class="absolute left-0 h-full flex items-center">
+<div class="flex relative w-9/12 h-fit mx-auto my-5">
+    <div class="absolute left-0 h-full flex items-center pl-1 pt-1">
         <div class="">Spoilers.IO</div>
     </div>
-    <div class="absolute right-0 h-full flex items-center">
+    <div class="absolute right-0 h-full flex items-center pr-1 pt-1">
         <LightSwitch />
     </div>
     <div class="w-4/6 mx-auto h-full">
