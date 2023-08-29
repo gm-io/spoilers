@@ -10,6 +10,10 @@
         goto(`/movie/${id_number}`)
     }
 
+    let goto_media_page = (id_number,media_type) =>{
+        goto(`/${media_type}/${id_number}`)
+    }
+
 </script>
 
 <div class="tv-carousel mt-1 ">
@@ -27,7 +31,7 @@
     <div class="snap-x space-x-2 scroll-px-4 snap-mandatory hide-scrollbar scroll-smooth flex overflow-x-auto gap-4 w-full mx-auto">
         {#each trending_data.week_trends as content}
             {#if content.media_type == "movie" && tv_or_movie == "movie"}
-                <div   on:click={()=>{goto_movie_page(content.id)}} on:keydown={()=>{goto_movie_page(content.id)}} class="snap-center shrink-0 w-fit text-center cursor-pointer" >
+                <div   on:click={()=>{goto_movie_page(content.id,'movie')}} on:keydown={()=>{goto_movie_page(content.id,'movie')}} class="snap-center shrink-0 w-fit text-center cursor-pointer" >
                     <img class="h-44 w-32 2xl:h-64 2xl:w-44 rounded-3xl drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
                     <div class="h-12 w-32 2xl:w-36 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
                             <div class="p-0 m-0 text-xs text-center">{content.title}</div>
