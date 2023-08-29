@@ -4,7 +4,7 @@ image div dimensions:
 44x32
 
 todo:
--link movies to individual pages
+-move header to layout.svelte
 -link tv shows to individual pages
 -add a ux visual aid for the trending slider
 -get icons for left and right button
