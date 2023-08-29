@@ -1,8 +1,14 @@
 <script>
     export let trending_data;
     import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+    import { goto } from '$app/navigation';
 
     let tv_or_movie = "movie"
+
+    let goto_movie_page = (id_number) =>{
+        // goto(`/${route}`, { replaceState }) 
+        goto(`/movie/${id_number}`)
+    }
 
 </script>
 
@@ -18,22 +24,21 @@
         <div class=" w-9/12 mx-auto border-t mt-5 border-black border-opacity-10 dark:border-gray-200 dark:border-opacity-10">
         </div>
     </div>
-
     <div class="snap-x space-x-2 scroll-px-4 snap-mandatory hide-scrollbar scroll-smooth flex overflow-x-auto gap-4 w-full mx-auto">
         {#each trending_data.week_trends as content}
+            {#if content.media_type == "movie" && tv_or_movie == "movie"}
+                <div   on:click={()=>{goto_movie_page(content.id)}} on:keydown={()=>{goto_movie_page(content.id)}} class="snap-center shrink-0 w-fit text-center cursor-pointer" >
+                    <img class="h-44 w-32 2xl:h-64 2xl:w-44 rounded-3xl drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                    <div class="h-12 w-32 2xl:w-36 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                            <div class="p-0 m-0 text-xs text-center">{content.title}</div>
+                    </div>
+                </div>  
+            {/if}
             {#if content.media_type == "tv" && tv_or_movie == "tv"}
                 <div class="snap-center shrink-0 w-fit text-center" >
                     <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 rounded-3xl drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
                     <div class="h-12 w-32 mt-4 mb-1 lg:w-36 2xl:w-44 bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
                             <div class="p-0 m-0 text-xs">{content.name}</div>
-                    </div>
-                </div>  
-            {/if}
-            {#if content.media_type == "movie" && tv_or_movie == "movie"}
-                <div class="snap-center shrink-0 w-fit text-center" >
-                    <img class="h-44 w-32 2xl:h-64 2xl:w-44 rounded-3xl drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
-                    <div class="h-12 w-32 2xl:w-36 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
-                            <div class="p-0 m-0 text-xs text-center">{content.title}</div>
                     </div>
                 </div>  
             {/if}

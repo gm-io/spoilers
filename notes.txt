@@ -4,6 +4,11 @@ image div dimensions:
 44x32
 
 todo:
+-link movies to individual pages
+-link tv shows to individual pages
+-add a ux visual aid for the trending slider
+-get icons for left and right button
+-make the text for carousel description responsive
 -Find an appopriate font
 -Expeiriment with indivudual component animation within the main carousel on-change
 - get icons for trending radio
