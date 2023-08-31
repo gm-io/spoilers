@@ -39,7 +39,7 @@
             {/if}
             {#if content.media_type == "tv" && tv_or_movie == "tv"}
                 <div role="button" tabindex="-1" on:click={()=>{goto_media_page(content.id,'tv')}} on:keyup={(e)=>{goto_media_page_keyHandler(content.id,'tv',e)}} class="cursor-pointer snap-center shrink-0 w-fit text-center" >
-                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 rounded-3xl drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 rounded drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
                     <div class="h-12 w-32 mt-4 mb-1 lg:w-36 2xl:w-44 bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
                             <div class="p-0 m-0 text-xs">{content.name}</div>
                     </div>
