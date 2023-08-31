@@ -3,14 +3,18 @@ image div dimensions:
 60x44
 44x32
 
-todo:
+todo for landing page:
 -move header to layout.svelte
--link tv shows to individual pages
 -add a ux visual aid for the trending slider
 -get icons for left and right button
 -make the text for carousel description responsive
--Find an appopriate font
 -Expeiriment with indivudual component animation within the main carousel on-change
-- get icons for trending radio
+-get icons for trending radio
 -make trending radio one line via responsiveness 
-- add searchbar to header
+
+todo for movie page:
+-
+
+
+todo for tv show page:
+-
