@@ -21,10 +21,12 @@
             <p class="">Type: {data.type}</p>
             <p class="">Networks:{data.networks.map((x)=>" "+x.name)}</p>
         </div>
-        <div class="poster"></div>
+        <div class="poster">
+            <img src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt="">
+        </div>
     </div>
 </div>
 
-<!-- <div>
+<div>
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div> -->
+</div>
