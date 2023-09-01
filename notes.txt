@@ -4,7 +4,6 @@ image div dimensions:
 44x32
 
 todo for landing page:
--move header to layout.svelte
 -add a ux visual aid for the trending slider
 -get icons for left and right button
 -make the text for carousel description responsive
