@@ -17,7 +17,7 @@ export async function GET({params}) {
         }
     };
 
-    const main_data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}`, options)
+    const main_data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?append_to_response=similar`, options)
         .then(res => res.json())
         .then(data => {
             return data;
