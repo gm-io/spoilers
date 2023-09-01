@@ -4,7 +4,7 @@
 
 <div class="flex relative w-full lg:w-9/12 2xl:w-10/12 h-fit mx-auto my-5 2xl:my-8">
     <div class="absolute left-0 h-full flex items-center pl-1 pt-1">
-        <div class="text-xs sm:text-base 2xl:text-lg">Spoilers.IO</div>
+        <div class=" bg-black text-xs sm:text-base 2xl:text-lg">Spoilers.IO</div>
     </div>
     <div class="absolute right-0 h-full flex items-center pr-1 pt-1">
         <LightSwitch />
