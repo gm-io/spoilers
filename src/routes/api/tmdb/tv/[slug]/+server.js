@@ -18,7 +18,7 @@ export async function GET({params}) {
     };
 
 
-    const tv_data = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}`, options)
+    const tv_data = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}?append_to_response=similar`, options)
         .then(res => res.json())
         .then(data => {
             return data;
