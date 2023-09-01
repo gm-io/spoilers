@@ -1,10 +1,11 @@
-import {json, error} from "@sveltejs/kit";
-import { env } from "$env/dynamic/private"
+import {json} from "@sveltejs/kit";
+import {env} from "$env/dynamic/private"
 
 //relevant tmdb docs: https://developer.themoviedb.org/reference/tv-series-details
 
 const tmdb_access_token = env.TMDB_ACCESS_TOKEN;
-export async function GET({params}){
+
+export async function GET({params}) {
 
     const tv_id = params.slug;
 
@@ -16,7 +17,8 @@ export async function GET({params}){
         }
     };
 
-    const data = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}`, options)
+
+    const tv_data = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}`, options)
         .then(res => res.json())
         .then(data => {
             return data;
@@ -24,5 +26,23 @@ export async function GET({params}){
         .catch(err => {
             return err;
         })
-    return json(data);
+
+    let season_data = []
+
+    for (let i = 1; i <= tv_data['number_of_seasons']; i++) {
+        season_data[i - 1] = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}/season/${i}`, options)
+            .then(res => res.json())
+            .then(data => {
+                return data;
+            })
+            .catch(err => {
+                return err;
+            })
     }
+
+    tv_data['seasons'] = season_data;
+
+    return json({
+        ...tv_data,
+    });
+}
