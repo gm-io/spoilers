@@ -9,7 +9,7 @@
 </script>
 
 <div class="main-container px-1 scrollbar-hidden">
-    <Header />
+    <!-- <Header /> -->
     <div class="w-full lg:w-9/12 2xl:w-10/12 mx-auto flex flex-col">
         <!-- <SearchBar /> -->
         <LandingBackdrop backdrop_data={data} image_url={data.week_trends[7]} />

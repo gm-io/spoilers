@@ -7,5 +7,7 @@
 
     // Application's global stylesheet (sometimes labeled 'app.css')
     import "../app.postcss";
+    import Header from '../components/Header.svelte';
 </script>
+<Header />
 <slot></slot>
