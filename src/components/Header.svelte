@@ -7,7 +7,7 @@
     <div class="absolute left-0 h-full flex items-center pl-4 pt-1">
         <div on:click={()=>goto(`/`)} on:keyup={goto('/')}  class="cursor-pointer hover:bg-stone-800 transition-all duration-300 bg-black p-3 py-1 bg-opacity-90 rounded text-xs sm:text-base 2xl:text-lg">Spoilers.IO</div>
     </div>
-    <div class="absolute right-0 h-full flex items-center pr-1 pt-1">
+    <div class="absolute right-0 h-full flex items-center pr-3 pt-1">
         <LightSwitch />
     </div>
     <div class="w-4/6 2xl:w-4/6 pl-2 2xl:pl-0 mx-auto  h-full">
