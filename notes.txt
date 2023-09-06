@@ -12,7 +12,10 @@ todo for landing page:
 -make trending radio one line via responsiveness 
 
 todo for movie page:
--
+-get reklease day for movies
+-color cordinate release dates
+-show similar movies
+-show possible collection a movie might belong to
 
 
 todo for tv show page:

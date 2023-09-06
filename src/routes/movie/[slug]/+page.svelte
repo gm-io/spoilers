@@ -9,7 +9,7 @@
             <p class="">Rating: {parseFloat(data.vote_average).toFixed(1)}</p>
             <p class="">Genre:{data.genres.map((x)=> " "+x.name)}</p>
             <p class="">Year: {data.release_date.substring(0,4)}</p>
-            <p class="">Language: {data.spoken_languages.map((x)=> x.english_name)}</p>
+            <p class="">Language: {data.spoken_languages.map((language)=> " " + language.english_name)}</p>
             <p class="">Production:{data.production_companies.map((production_company)=> " "+ production_company.name )}</p>
             <p class="">Status: {data.status}</p>
             <p class="">Runtime: {data.runtime} minutes</p>
@@ -31,6 +31,6 @@
     </div>
 </div>
 
-<div>
+<!-- <div>
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div>
+</div> -->
