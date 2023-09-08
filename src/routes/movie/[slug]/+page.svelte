@@ -27,10 +27,14 @@
         </div>
         <div class="poster">
             <img class="h-44" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
+            {#if data.belongs_to_collection}
+                <img class="h-44" src={`https://www.themoviedb.org/t/p/original${data.belongs_to_collection.poster_path}`} alt={data.title}>
+            {/if}
+
         </div>
     </div>
 </div>
 
-<!-- <div>
+<div>
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div> -->
+</div>
