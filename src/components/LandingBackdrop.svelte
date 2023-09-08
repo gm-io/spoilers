@@ -53,7 +53,7 @@
     {#key current}
     <div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10">
         <div class=" relative">
-            <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50 font-bold">
+            <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50 font-bold text-white">
                 <div on:click={left_button} class="cursor-pointer">[-Left-]</div>
                 <div on:click={right_button} class="cursor-pointer">[-Right-]</div>
             </div>
