@@ -24,7 +24,7 @@
                 <RadioItem class="text-xs lg:text-sm tracking-tight py-1 font-bold" bind:group={tv_or_movie} name="justify" value={"tv"}>Trending Series</RadioItem>
             </RadioGroup>
         </div>
-        <div class=" w-9/12 mx-auto border-t mt-5 border-black border-opacity-10 dark:border-gray-200 dark:border-opacity-10">
+        <div class=" w-9/12 mx-auto border-t mt-5 border-black border-opacity-0 dark:border-gray-200 dark:border-opacity-0">
         </div>
     </div>
     <div class="snap-x space-x-2 scroll-px-4 snap-mandatory hide-scrollbar scroll-smooth flex overflow-x-auto gap-4 w-full mx-auto">
