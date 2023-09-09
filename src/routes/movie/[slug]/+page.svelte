@@ -33,8 +33,14 @@
 
         </div>
     </div>
+    <div class="similar-movies">
+        <h1 class="h3 underline">Similar movies</h1>
+        {#each data.similar.results as similar}
+            <div class="cursor-pointer">{similar.title}</div>
+        {/each}
+    </div>
 </div>
 
-<div>
+<!-- <div>
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div>
+</div> -->
