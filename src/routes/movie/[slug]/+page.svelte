@@ -35,12 +35,18 @@
     </div>
     <div class="similar-movies">
         <h1 class="h3 underline">Similar movies</h1>
-        {#each data.similar.results as similar}
-            <div class="cursor-pointer">{similar.title}</div>
-        {/each}
+        <div class="flex space-x-6">
+            {#each data.similar.results as similar}
+            <div class="flex flex-col w-36">
+                <img class="h-44 rounded-2xl" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
+                <div class="cursor-pointer">{similar.title}</div>
+
+            </div>
+            {/each}
+         </div>
     </div>
 </div>
-
-<!-- <div>
+<!-- 
+<div>
     <pre>{JSON.stringify(data, null, 2)}</pre>
 </div> -->
