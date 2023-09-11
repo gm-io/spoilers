@@ -3,7 +3,7 @@ image div dimensions:
 60x44
 44x32
 
-todo for landing page:
+#todo for landing page:
 -add a ux visual aid for the trending slider
 -get icons for left and right button
 -make the text for carousel description responsive
@@ -11,11 +11,12 @@ todo for landing page:
 -get icons for trending radio
 -make trending radio one line via responsiveness 
 
-todo for movie page:
+##todo for movie page:
 -get reklease day for movies
 -color cordinate release dates
 -show possible collection a movie might belong to
+- create svg image for shows without images
 
 
-todo for tv show page:
--
+###todo for tv show page:
+- find default images for shows without images
