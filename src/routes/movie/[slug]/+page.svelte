@@ -1,5 +1,15 @@
 <script>
     export let data;
+    import { goto } from '$app/navigation';
+
+    let goto_media_page = (id_number,media_type) =>{
+        goto(`/${media_type}/${id_number}`)
+    }
+    let goto_media_page_keyHandler = (id_number,media_type,e) =>{
+        if (e.key == 'Enter' )
+            goto(`/${media_type}/${id_number}`)
+    }
+
 </script>
 
 <div class="w-fit mx-auto">
@@ -13,6 +23,9 @@
             <p class="">Production:{data.production_companies.map((production_company)=> " "+ production_company.name )}</p>
             <p class="">Status: {data.status}</p>
             <p class="">Runtime: {data.runtime} minutes</p>
+
+
+            
 
 
 
@@ -37,8 +50,8 @@
         <h1 class="h3 underline">Similar movies</h1>
         <div class="flex space-x-6">
             {#each data.similar.results as similar}
-            <div class="flex flex-col w-36">
-                <img class="h-44 rounded-2xl" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
+            <div class="flex flex-col w-36" on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
+                <img class="h-44 rounded-2xl cursor-pointer" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
                 <div class="cursor-pointer">{similar.title}</div>
 
             </div>

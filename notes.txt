@@ -14,7 +14,6 @@ todo for landing page:
 todo for movie page:
 -get reklease day for movies
 -color cordinate release dates
--show similar movies
 -show possible collection a movie might belong to
 
 
