@@ -49,7 +49,7 @@
     <div class="similar-movies">
         <h1 class="h3 underline">Similar movies</h1>
         <div class="flex space-x-6">
-            {#each data.similar.results as similar}
+            {#each data.similar.results as similar (similar.id)}
             <div  tabindex="0" role="button" class="flex flex-col w-36" on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
                 <img class="h-44 rounded-2xl cursor-pointer" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
                 <div class="cursor-pointer">{similar.title}</div>
