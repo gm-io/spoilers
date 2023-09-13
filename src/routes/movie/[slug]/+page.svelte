@@ -24,12 +24,14 @@
         <div class="details w-3/5 pl-6">
             <p class="h2 font-bold">Title: {data.title}</p>
             <p class="h4 mb-8">{data.release_date.substring(0,4)}</p>
-            <p class="">Genre:{data.genres.map((x)=> " "+x.name)}</p>
-            <p class="">Rating: {parseFloat(data.vote_average).toFixed(1)}</p>
-            <p class="mb-4">Language: {data.spoken_languages.map((language)=> " " + language.english_name)}</p>
-            <p class="">Production:{data.production_companies.map((production_company)=> " "+ production_company.name )}</p>
-            <!-- <p class="">Status: {data.status}</p> -->
-            <p class="">Runtime: {data.runtime} minutes</p>
+            <div class="font-bol text-xl">
+                <p class="">Genre:{data.genres.map((x)=> " "+x.name)}</p>
+                <p class="">Rating: {parseFloat(data.vote_average).toFixed(1)}</p>
+                <p class="mb-4">Language: {data.spoken_languages.map((language)=> " " + language.english_name)}</p>
+                <p class="">Production:{data.production_companies.map((production_company)=> " "+ production_company.name )}</p>
+                <!-- <p class="">Status: {data.status}</p> -->
+                <p class="">Runtime: {data.runtime} minutes</p>
+            </div>
 <!-- 
             <p class="">Type: {data.type}</p>
             <p class="">Networks:{data.networks.map((x)=>" "+x.name)}</p>
