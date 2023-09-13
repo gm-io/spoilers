@@ -12,6 +12,8 @@
 
     let details_css ='text-white font-normal'
 
+    let similar_list = data.similar.results.slice(0,7)
+
 </script>
 
 <div class="w-9/12 2xl:w-10/12 mx-auto mt-6 2xl:mt-20">
@@ -46,11 +48,11 @@
     </div>
     <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
     <div class="similar-movies">
-        <h1 class="h3 underline">Similar movies</h1>
+        <h1 class="text-gray-400 text-opacity-70 my-2 pl-4">Similar Titles</h1>
         <div class="flex space-x-6 w-full overflow-scroll">
-            {#each data.similar.results as similar (similar.id)}
+            {#each similar_list as similar (similar.id)}
             <div  tabindex="0" role="button" class="flex flex-col w-36" on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
-                <img class="h-44 rounded-2xl cursor-pointer" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
+                <img class="h-48 rounded-2xl cursor-pointer" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
                 <div class="cursor-pointer">{similar.title}</div>
 
             </div>

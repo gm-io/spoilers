@@ -10,11 +10,13 @@ image div dimensions:
 -Expeiriment with indivudual component animation within the main carousel on-change
 -get icons for trending radio
 -make trending radio one line via responsiveness 
+-add a mini link for advanced search
 
 ##todo for movie page:
--center the main information div
+-adjest colors for light and dark themes
+-sort similar movies and Expeiriment with the possibility of limiting the number of recommendations 
+-add images to show the streaming services that the movies belong to
 -use a darkened blurred backdrop of the movie poster for the background of the information div
--list the similar movies below information div
 -get reklease day for movies
 -color cordinate release dates
 - create svg image for shows without images
