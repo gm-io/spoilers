@@ -12,6 +12,9 @@ image div dimensions:
 -make trending radio one line via responsiveness 
 
 ##todo for movie page:
+-center the main information div
+-use a darkened blurred backdrop of the movie poster for the background of the information div
+-list the similar movies below information div
 -get reklease day for movies
 -color cordinate release dates
 - create svg image for shows without images
