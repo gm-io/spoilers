@@ -10,7 +10,7 @@
             goto(`/${media_type}/${id_number}`)
     }
 
-    let details_css =''
+    let details_css ='text-white font-normal'
 
 </script>
 
@@ -24,15 +24,15 @@
 
         </div>
         <div class="details w-3/5 pl-6 bg-orange- h-fit my-auto">
-            <p class="h2 font-bold">Title: {data.title}</p>
-            <p class="h4 mb-8">{data.release_date.substring(0,4)}</p>
-            <div class="font-bol text-xl">
-                <p class="">Genre:{data.genres.map((x)=> " "+x.name)}</p>
-                <p class="">Rating: {parseFloat(data.vote_average).toFixed(1)}</p>
-                <p class="mb-4">Language: {data.spoken_languages.map((language)=> " " + language.english_name)}</p>
-                <p class="">Production:{data.production_companies.map((production_company)=> " "+ production_company.name )}</p>
+            <p class="h2 font-bold">{data.title}</p>
+            <p class="h4 mb-8 text-gray-400">{data.release_date.substring(0,4)}</p>
+            <div class="font-bold text-xl">
+                <p class="">Genre:<span class={details_css}>{data.genres.map((x)=> " "+x.name)}</span></p>
+                <p class="">Rating: <span class={details_css}>{parseFloat(data.vote_average).toFixed(1)}</span></p>
+                <p class="mb-4">Language: <span class={details_css}>{data.spoken_languages.map((language)=> " " + language.english_name)}</span></p>
+                <p class="">Production: <span class={details_css}>{data.production_companies.map((production_company)=> " "+ production_company.name )}</span></p>
                 <!-- <p class="">Status: {data.status}</p> -->
-                <p class="">Runtime: <span class={details_css}></span> {data.runtime} minutes</p>
+                <p class="">Runtime: <span class={details_css}>{data.runtime} minutes</span></p>
             </div>
 <!-- 
             <p class="">Type: {data.type}</p>
