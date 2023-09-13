@@ -14,7 +14,7 @@
 
 </script>
 
-<div class="w-9/12 2xl:w-10/12 mx-auto">
+<div class="w-9/12 2xl:w-10/12 mx-auto mt-6 2xl:mt-20">
     <div class="flex relative">
         <div class="poster w-fit bg-white p-2 rounded-2xl ml-4">
             <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
@@ -44,9 +44,10 @@
         </div> -->
 
     </div>
-    <!-- <div class="similar-movies">
+    <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
+    <div class="similar-movies">
         <h1 class="h3 underline">Similar movies</h1>
-        <div class="flex space-x-6">
+        <div class="flex space-x-6 w-full overflow-scroll">
             {#each data.similar.results as similar (similar.id)}
             <div  tabindex="0" role="button" class="flex flex-col w-36" on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
                 <img class="h-44 rounded-2xl cursor-pointer" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
@@ -55,7 +56,7 @@
             </div>
             {/each}
          </div>
-    </div> -->
+    </div>
 </div>
 <!-- 
 <div>
