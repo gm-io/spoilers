@@ -14,7 +14,6 @@ image div dimensions:
 ##todo for movie page:
 -get reklease day for movies
 -color cordinate release dates
--show possible collection a movie might belong to
 - create svg image for shows without images
 
 

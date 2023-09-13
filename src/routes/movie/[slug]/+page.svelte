@@ -13,7 +13,14 @@
 </script>
 
 <div class="w-full mx-auto">
-    <div class="flex space-x-10">
+    <div class="flex">
+        <div class="poster w-fit bg-white p-2 rounded-2xl">
+            <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
+            <!-- {#if data.belongs_to_collection}
+                <img class="h-44" src={`https://www.themoviedb.org/t/p/original${data.belongs_to_collection.poster_path}`} alt={data.title}>
+            {/if} -->
+
+        </div>
         <div class="details w-3/5 pl-6">
             <p class="h2 font-bold">Title: {data.title}</p>
             <p class="h4 mb-8">{data.release_date.substring(0,4)}</p>
@@ -28,13 +35,7 @@
             <p class="">Networks:{data.networks.map((x)=>" "+x.name)}</p>
              -->
         </div>
-        <div class="poster bg-green-500 w-2/5">
-            <img class="h-44" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
-            <!-- {#if data.belongs_to_collection}
-                <img class="h-44" src={`https://www.themoviedb.org/t/p/original${data.belongs_to_collection.poster_path}`} alt={data.title}>
-            {/if} -->
 
-        </div>
     </div>
     <!-- <div class="similar-movies">
         <h1 class="h3 underline">Similar movies</h1>
