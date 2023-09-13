@@ -10,18 +10,20 @@
             goto(`/${media_type}/${id_number}`)
     }
 
+    let details_css =''
+
 </script>
 
-<div class="w-full mx-auto">
-    <div class="flex">
-        <div class="poster w-fit bg-white p-2 rounded-2xl">
+<div class="w-9/12 2xl:w-10/12 mx-auto">
+    <div class="flex relative">
+        <div class="poster w-fit bg-white p-2 rounded-2xl ml-4">
             <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
             <!-- {#if data.belongs_to_collection}
                 <img class="h-44" src={`https://www.themoviedb.org/t/p/original${data.belongs_to_collection.poster_path}`} alt={data.title}>
             {/if} -->
 
         </div>
-        <div class="details w-3/5 pl-6">
+        <div class="details w-3/5 pl-6 bg-orange- h-fit my-auto">
             <p class="h2 font-bold">Title: {data.title}</p>
             <p class="h4 mb-8">{data.release_date.substring(0,4)}</p>
             <div class="font-bol text-xl">
@@ -30,13 +32,16 @@
                 <p class="mb-4">Language: {data.spoken_languages.map((language)=> " " + language.english_name)}</p>
                 <p class="">Production:{data.production_companies.map((production_company)=> " "+ production_company.name )}</p>
                 <!-- <p class="">Status: {data.status}</p> -->
-                <p class="">Runtime: {data.runtime} minutes</p>
+                <p class="">Runtime: <span class={details_css}></span> {data.runtime} minutes</p>
             </div>
 <!-- 
             <p class="">Type: {data.type}</p>
             <p class="">Networks:{data.networks.map((x)=>" "+x.name)}</p>
              -->
         </div>
+        <!-- <div class="poster w-fit bg-white p-2 rounded-2xl absolute right-4">
+            <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
+        </div> -->
 
     </div>
     <!-- <div class="similar-movies">
