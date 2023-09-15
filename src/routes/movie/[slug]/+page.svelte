@@ -12,11 +12,11 @@
 
     let details_css ='text-white font-normal'
 
-    let similar_list = data.similar.results.slice(0,16)
+    $:similar_list = data.similar.results.slice(0,16)
 
 </script>
 
-<div class="w-9/12 2xl:w-10/12 mx-auto mt-10 2xl:mt-20">
+<div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-10/12 mx-auto mt-10 2xl:mt-20">
     <div class="flex relative bg-green-600 bg-opacity-10 rounded-xl py-7">
         <div class="poster w-fit bg-white p-2 rounded-2xl ml-4">
             <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
@@ -49,6 +49,8 @@
     <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
     <div class="similar-movies">
         <h1 class="text-gray-400 text-opacity-70 my-2 pl-4">Similar Titles</h1>
+        {#key similar_list}
+            
         <div class="flex space-x-6 w-full overflow-scroll hide-scrollbar ">
             {#each similar_list as similar (similar.id)}
             <div  class="flex flex-col " tabindex="0" role="button"  on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
@@ -57,7 +59,9 @@
 
             </div>
             {/each}
-         </div>
+        </div>
+        {/key}
+
     </div>
 </div>
 <!-- 
