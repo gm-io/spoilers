@@ -58,7 +58,7 @@
                 <div on:click={right_button} class="cursor-pointer">[-Right-]</div>
             </div>
             <div class="absolute right-0 z-40 w-fit flex items-center px-2 mr md:mr-6 2xl:mr-16  h-full">
-                <img class="shadow-lg h-64 w-48 2xl:h-80 2xl:w-60  rounded opacity-80 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
+                <img class="shadow-lg h-72 w-48 2xl:h-80 2xl:w-60  rounded opacity-80 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
             </div>
             <div class="absolute inset-0 flex items-end">
                 <div class="w-[100%] text h-[100%] px-8 py-4 text-white bg-black bg-opacity-20 flex items-center">
