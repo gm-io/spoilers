@@ -13,7 +13,6 @@ image div dimensions:
 -add a mini link for advanced search
 
 ##todo for movie page:
--adjest colors for light and dark themes
 -sort similar movies and Expeiriment with the possibility of limiting the number of recommendations 
 -add images to show the streaming services that the movies belong to
 -use a darkened blurred backdrop of the movie poster for the background of the information div

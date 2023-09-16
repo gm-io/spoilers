@@ -10,7 +10,7 @@
             goto(`/${media_type}/${id_number}`)
     }
 
-    let details_css ='text-white font-normal'
+    let details_css ='dark:text-white text-gray-700 font-normal'
 
     $:similar_list = data.similar.results.slice(0,16)
 
@@ -27,7 +27,7 @@
         </div>
         <div class="details w-3/5 pl-6 bg-orange- h-fit my-auto">
             <p class="h2 font-bold">{data.title}</p>
-            <p class="h4 mb-8 text-gray-400">{data.release_date.substring(0,4)}</p>
+            <p class="h4 mb-8 text-gray-600 dark:text-gray-400">{data.release_date.substring(0,4)}</p>
             <div class="font-bold text-xl">
                 <p class="">Genre:<span class={details_css}>{data.genres.map((x)=> " "+x.name)}</span></p>
                 <p class="">Rating: <span class={details_css}>{parseFloat(data.vote_average).toFixed(1)}</span></p>
@@ -48,7 +48,7 @@
     </div>
     <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
     <div class="similar-movies">
-        <h1 class="text-gray-400 text-opacity-70 my-2 pl-4">Similar Titles</h1>
+        <h1 class="text-gray-800 dark:text-gray-400 dark:text-opacity-70 my-2 pl-4">Similar Titles</h1>
         {#key similar_list}
             
         <div class="flex space-x-6 w-full overflow-scroll hide-scrollbar ">
