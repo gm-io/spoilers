@@ -9,7 +9,6 @@ image div dimensions:
 -make the text for carousel description responsive
 -Expeiriment with indivudual component animation within the main carousel on-change
 -get icons for trending radio
--make trending radio one line via responsiveness 
 -add a mini link for advanced search
 
 ##todo for movie page:

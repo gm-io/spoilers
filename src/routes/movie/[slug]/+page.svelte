@@ -40,12 +40,21 @@
             <p class="">Type: {data.type}</p>
             <p class="">Networks:{data.networks.map((x)=>" "+x.name)}</p>
              -->
+             <div class="flex space-x-4 pt-4">
+                {#each data.trailers as trailer, index}
+                <div class="bg-sky-500 py-3 px-6 rounded-full">
+                    <p class="">{`Trailer ${index+1}`}</p>
+                </div>
+                {/each}
+            </div>
         </div>
         <!-- <div class="poster w-fit bg-white p-2 rounded-2xl absolute right-4">
             <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
         </div> -->
 
     </div>
+    <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div> -->
+
     <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
     <div class="similar-movies">
         <h1 class="text-gray-800 dark:text-gray-400 dark:text-opacity-70 my-2 pl-4">Similar Titles</h1>
@@ -62,11 +71,6 @@
         </div>
         {/key}
 
-    </div>
-    <div class="flex space-x-4 py-2">
-        {#each data.trailers as trailer}
-            <p class="p-2 bg-white">{trailer.name}</p>
-        {/each}
     </div>
 </div>
 
