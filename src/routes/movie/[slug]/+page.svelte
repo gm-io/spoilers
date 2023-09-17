@@ -16,7 +16,7 @@
 
 </script>
 
-<div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-10/12 mx-auto mt-10 2xl:mt-20 bg-orange-600">
+<div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-10/12 mx-auto mt-10 2xl:mt-20">
     <div class="flex relative bg-green-600 bg-opacity-10 rounded-xl py-7">
         <div class="poster w-fit bg-white p-2 rounded-2xl ml-4">
             <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
@@ -70,6 +70,6 @@
     </div>
 </div>
 
-<div>
+<!-- <div>
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div>
+</div> -->
