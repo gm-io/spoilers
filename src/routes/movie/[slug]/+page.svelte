@@ -53,7 +53,7 @@
              <div class="flex space-x-4 pt-4">
                 {#each data.trailers as trailer, index}
                 <div class="bg-sky-500 py-3 px-6 rounded-full">
-                    <p class="">{`Trailer ${index+1}`}</p>
+                    <p class="text-white">{`Trailer ${index+1}`}</p>
                 </div>
                 {/each}
             </div>
