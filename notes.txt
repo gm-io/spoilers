@@ -10,12 +10,11 @@ image div dimensions:
 -Expeiriment with indivudual component animation within the main carousel on-change
 -get icons for trending radio
 -add a mini link for advanced search
--add morders to landing carousel with similar white tint from disney+
+-add borders to landing carousel with similar white tint from disney+
 
 ##todo for movie page:
 -sort similar movies and Expeiriment with the possibility of limiting the number of recommendations 
 -add images to show the streaming services that the movies belong to
--use a darkened blurred backdrop of the movie poster for the background of the information div
 -get reklease day for movies
 -color cordinate release dates
 - create svg image for shows without images
