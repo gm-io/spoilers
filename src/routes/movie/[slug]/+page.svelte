@@ -21,8 +21,10 @@
         <!-- <div class="h-full w-full bg-orange-400 absolute inset-0 -z-10"></div> -->
         <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full">
             <div class="relative p-1">
-                <img class="rounded object-cover h-full w-full blur-md" alt="The project logo" src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} />
-                <div class="absolute inset-0 bg-black opacity-60"></div>
+                {#if data.backdrop_path }
+                    <img class="rounded object-cover h-full w-full blur-md" alt="The project logo" src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} />
+                    <div class="absolute inset-0 bg-black opacity-80"></div>
+                {/if}
             </div>
         </div>
 
