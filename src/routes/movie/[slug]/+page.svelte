@@ -17,10 +17,10 @@
 </script>
 
 <div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-10/12 mx-auto mt-10 2xl:mt-20">
-    <div class="flex relative rounded-xl py-7">
+    <div class="flex relative rounded-xl py-7 2xl:py-14">
         <!-- <div class="h-full w-full bg-orange-400 absolute inset-0 -z-10"></div> -->
         <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full">
-            <div class="relative p-1">
+            <div class="relative p-1 2xl:p-0">
                 {#if data.backdrop_path }
                     <img class="rounded object-cover h-full w-full blur-md" alt="The project logo" src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} />
                     <div class="absolute inset-0 bg-white bg-opacity-60 dark:bg-black dark:opacity-80"></div>
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="poster w-fit bg-white p-2 rounded-2xl ml-4">
+        <div class="poster w-fit bg-white p-2 rounded-2xl ml-4 2xl:ml-16">
             <img class="h-96" src={`https://www.themoviedb.org/t/p/original${data.poster_path}`} alt={data.title}>
             <!-- {#if data.belongs_to_collection}
                 <img class="h-44" src={`https://www.themoviedb.org/t/p/original${data.belongs_to_collection.poster_path}`} alt={data.title}>
