@@ -3,6 +3,15 @@
     export let backdrop_data;
     import { tweened } from 'svelte/motion';
 	import { fade, scale } from 'svelte/transition';
+    import { goto } from '$app/navigation';
+
+    let goto_media_page = (id_number,media_type) =>{
+        goto(`/${media_type}/${id_number}`)
+    }
+    let goto_media_page_keyHandler = (id_number,media_type,e) =>{
+        if (e.key == 'Enter' )
+            goto(`/${media_type}/${id_number}`)
+    }
 
     let original = 1 * 8; // TYPE NUMBER OF SECONDS HERE
 	let timer = tweened(original)
@@ -53,7 +62,7 @@
                 <div on:click={right_button} class="cursor-pointer">[-Right-]</div>
             </div>
             <div class="absolute right-0 z-40 w-fit flex items-center px-2 mr md:mr-6 2xl:mr-16  h-full">
-                <img class="shadow-lg h-72 w-48 2xl:h-80 2xl:w-60  rounded opacity-80 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
+                <img on:click={()=>{goto_media_page(movie_day_trends[current].id,'movie')}}  class="shadow-lg h-72 w-48 2xl:h-80 2xl:w-60 hover:scale-105 cursor-pointer border-2 border-white   rounded opacity-90 hover:opacity-100 transition duration-500 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
             </div>
             <div class="absolute inset-0 flex items-end">
                 <div class="w-[100%] text h-[100%] px-8 py-4 text-white bg-black bg-opacity-20 flex items-center">
