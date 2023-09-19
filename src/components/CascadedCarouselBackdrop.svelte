@@ -2,8 +2,6 @@
     export let image_url;
     export let backdrop_data;
 
-    console.log("backdrop data:",backdrop_data)
-
     let movie_day_trends = backdrop_data.day_trends.filter(x =>(x.media_type == "movie"))
     let tv_day_trends = backdrop_data.day_trends.filter(x =>(x.media_type == "tv"))
 

@@ -5,6 +5,8 @@
 
 
 	// const getModalStore = modalStore();
+    console.log($modalStore[0].image)
+
 
 	// Base Classes
 	const cBase = 'relative w-modal-wide shadow-xl';
@@ -19,7 +21,7 @@
 		<button class={cButton} on:click={parent.onClose}>✕</button>
 		<iframe
 			class={cIframe}
-			src="https://www.youtube.com/embed/vOGhAV-84iI"
+			src={`https://www.youtube.com/embed/${$modalStore[0].image}`}
 			title="YouTube video player"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

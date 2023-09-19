@@ -18,16 +18,12 @@
     let customModal = () =>{
         const modal = {
             type: 'component',
-            component: 'modalComponentTwo'
+            component: 'modalComponentTwo',
+            image:'vxvP9zSOL7s?si=L1KQmzZZ74iI6CIU'
         }
         modalStore.trigger(modal)
+        console.log($modalStore[0].meta?.someKey)
     }
-
-    // Provide the modal settings
-
-    const cBase = 'relative w-modal-wide shadow-xl';
-	const cButton = 'absolute -top-3 -right-3 z-1 btn-icon variant-filled';
-	const cIframe = 'bg-black w-full aspect-video rounded-container-token overflow-hidden';
 </script>
 
 
@@ -38,18 +34,3 @@ design page
     <div on:click={customModal} class="p-4 bg-blue-600 w-fit m-4 rounded cursor-pointer">Click Me</div>
 
 </div>
-
-
-
-<!-- {#if $modalStore[0]}
-	<div class="modal-example-form {cBase}">
-		<iframe
-			class={cIframe}
-			src="https://www.youtube.com/embed/vOGhAV-84iI"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen
-		/>
-	</div>
-{/if} -->
