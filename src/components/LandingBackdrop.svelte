@@ -49,6 +49,7 @@
     console.log("backdrop data:",backdrop_data)
 
     let movie_day_trends = backdrop_data.day_trends.filter(x =>(x.media_type == "movie"))
+    console.log(movie_day_trends)
                         
 </script>
 <!-- <progress class="rounded-none" value={$timer/original}></progress> -->

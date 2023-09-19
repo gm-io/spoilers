@@ -3,6 +3,9 @@ image div dimensions:
 60x44
 44x32
 
+#todo general
+-do a lot of responsive design
+
 #todo for landing page:
 -add a ux visual aid for the trending slider
 -get icons for left and right button
@@ -10,7 +13,7 @@ image div dimensions:
 -Expeiriment with indivudual component animation within the main carousel on-change
 -get icons for trending radio
 -add a mini link for advanced search
--add borders to landing carousel with similar white tint from disney+
+-request trailer data for daily trending
 
 ##todo for movie page:
 -sort similar movies and Expeiriment with the possibility of limiting the number of recommendations 
@@ -19,8 +22,7 @@ image div dimensions:
 -color cordinate release dates
 - create svg image for shows without images
 - request screenshots for movies
-- make trailers playable using modals
-
+- add section for cast
 
 
 ###todo for tv show page:
