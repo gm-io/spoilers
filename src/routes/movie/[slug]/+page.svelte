@@ -63,9 +63,7 @@
              -->
              <div class="flex space-x-4 pt-4">
                 {#each data.trailers as trailer, index}
-                <div on:click={()=> trailer_modal(trailer.key)} class="bg-sky-500 py-3 px-6 rounded-full">
-                    <p class="text-white">{`Trailer ${index+1}`}</p>
-                </div>
+                    <button on:click={()=> trailer_modal(trailer.key)} type="button" class="btn variant-filled-primary">{`Trailer ${index+1}`}</button>
                 {/each}
             </div>
         </div>

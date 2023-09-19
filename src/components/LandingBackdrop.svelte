@@ -13,11 +13,6 @@
         if ($timer > 0){
             $timer--;
         } else{
-            // current++
-            // timer=tweened(original)
-            // if (current>=movie_day_trends.length){
-            //     current = 0
-            // }
             right_button()
         }
     },1000);
