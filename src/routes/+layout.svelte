@@ -2,6 +2,8 @@
     // using custom theme; loaded here ->
     import '../theme4.postcss';
 
+    import { Modal, modalStore } from '@skeletonlabs/skeleton';
+    
     // This contains the bulk of Skeletons required styles:
     import '@skeletonlabs/skeleton/styles/skeleton.css';
 
@@ -9,5 +11,6 @@
     import "../app.postcss";
     import Header from '../components/Header.svelte';
 </script>
+<Modal />
 <Header />
 <slot></slot>

@@ -1,16 +1,27 @@
 <script>
 
+    import { modalStore } from '@skeletonlabs/skeleton';
 
+    let myModal = () => {
+        const modal = {
+            type: 'alert',
+            title: 'Example Alert',
+            body: 'This is an example modal.',
+            image: 'https://i.imgur.com/WOgTG96.gif',
+        };
+
+        // Trigger the modal:
+        modalStore.trigger(modal);
+
+    }
+
+    // Provide the modal settings
+
+                    
 </script>
 
-<div class="h-[100vh] w-full bg-indigo-400 md:bg-red-400 relative">
-    <div class=" box absolute bottom-0 right-0 h-40 w-40 bg-white cursor-pointer hover:bg-red-500">Hello</div>
-</div>
 
-<style>
-    .box{
-        background-color: aquamarine;
-    }
-</style>
+design page
 
+<div on:click={myModal} class="p-4 bg-black w-fit m-4 rounded cursor-pointer">Click Me</div>
 
