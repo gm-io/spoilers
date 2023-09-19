@@ -1,6 +1,17 @@
 <script>
     export let data;
     import { goto } from '$app/navigation';
+    import { modalStore } from '@skeletonlabs/skeleton';
+
+    let trailer_modal = (trailer_key) =>{
+        const modal = {
+            type: 'component',
+            component: 'modalComponentTwo',
+            image: trailer_key
+        }
+        modalStore.trigger(modal)
+    }
+
 
     let goto_media_page = (id_number,media_type) =>{
         goto(`/${media_type}/${id_number}`)
@@ -52,7 +63,7 @@
              -->
              <div class="flex space-x-4 pt-4">
                 {#each data.trailers as trailer, index}
-                <div class="bg-sky-500 py-3 px-6 rounded-full">
+                <div on:click={()=> trailer_modal(trailer.key)} class="bg-sky-500 py-3 px-6 rounded-full">
                     <p class="text-white">{`Trailer ${index+1}`}</p>
                 </div>
                 {/each}
@@ -84,6 +95,6 @@
     </div>
 </div>
 
-<!-- <div>
+<div>
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div> -->
+</div>

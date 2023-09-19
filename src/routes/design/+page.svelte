@@ -19,7 +19,7 @@
         const modal = {
             type: 'component',
             component: 'modalComponentTwo',
-            image:'vxvP9zSOL7s?si=L1KQmzZZ74iI6CIU'
+            image:'dG91B3hHyY4'
         }
         modalStore.trigger(modal)
         console.log($modalStore[0].meta?.someKey)
