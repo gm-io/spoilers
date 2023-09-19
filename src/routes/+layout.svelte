@@ -3,6 +3,8 @@
     import '../theme4.postcss';
 
     import { Modal, modalStore } from '@skeletonlabs/skeleton';
+    modalStore.clear();
+
     
     // This contains the bulk of Skeletons required styles:
     import '@skeletonlabs/skeleton/styles/skeleton.css';
@@ -11,6 +13,7 @@
     import "../app.postcss";
     import Header from '../components/Header.svelte';
 </script>
-<Modal />
 <Header />
-<slot></slot>
+<Modal />
+<slot>
+</slot>
