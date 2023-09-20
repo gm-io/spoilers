@@ -76,7 +76,7 @@
                             <p class="text-xs">🇺🇸 English</p>
                         </div>
                         <div class="">
-                            <button type="button" class="btn variant-filled-primary">Watch Trailer</button>
+                            <button on:click={()=>{goto_media_page(movie_day_trends[current].id,'movie')}} type="button" class="btn variant-filled-primary">Watch Trailer</button>
                         </div>
                     </div>
                 </div>
