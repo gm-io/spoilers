@@ -59,12 +59,12 @@
     <div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10">
         <div class=" relative">
             <div class="absolute bottom-0 left-0 right-0 m-auto flex w-fit space-x-6 p-3 z-50 font-bold text-white">
-                <div on:click={left_button} class="cursor-pointer opacity-10 hover:opacity-30">
+                <div on:click={left_button} class="cursor-pointer opacity-30 hover:opacity-50 hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-4.28 9.22a.75.75 0 000 1.06l3 3a.75.75 0 101.06-1.06l-1.72-1.72h5.69a.75.75 0 000-1.5h-5.69l1.72-1.72a.75.75 0 00-1.06-1.06l-3 3z" clip-rule="evenodd" />
                       </svg>                      
                 </div>
-                <div on:click={right_button} class="cursor-pointer opacity-10 hover:opacity-30">
+                <div on:click={right_button} class="cursor-pointer opacity-30 hover:opacity-50">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 hover:scale-105 text-white active:text-blue-500">
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd" />
                     </svg>                  

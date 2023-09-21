@@ -8,7 +8,6 @@ image div dimensions:
 
 #todo for landing page:
 -add a ux visual aid for the trending slider
--get icons for left and right button
 -make the text for carousel description responsive
 -Expeiriment with indivudual component animation within the main carousel on-change
 -get icons for trending radio
