@@ -58,9 +58,17 @@
     {#key current}
     <div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10">
         <div class=" relative">
-            <div class="absolute bottom-0 right-0 flex space-x-2 p-3 z-50 font-bold text-white">
-                <div on:click={left_button} class="cursor-pointer">[-Left-]</div>
-                <div on:click={right_button} class="cursor-pointer">[-Right-]</div>
+            <div class="absolute bottom-0 center-0 flex bg-yellow-500 w-fit mx-auto space-x-3 p-3 z-50 font-bold text-white">
+                <div on:click={left_button} class="cursor-pointer opacity-10 hover:opacity-30">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-4.28 9.22a.75.75 0 000 1.06l3 3a.75.75 0 101.06-1.06l-1.72-1.72h5.69a.75.75 0 000-1.5h-5.69l1.72-1.72a.75.75 0 00-1.06-1.06l-3 3z" clip-rule="evenodd" />
+                      </svg>                      
+                </div>
+                <div on:click={right_button} class="cursor-pointer opacity-10 hover:opacity-30">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 hover:scale-105 text-white active:text-blue-500">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd" />
+                    </svg>                  
+                </div>
             </div>
             <div class="absolute right-0 z-40 w-fit flex items-center px-2 mr md:mr-6 2xl:mr-16  h-full">
                 <img on:click={()=>{goto_media_page(movie_day_trends[current].id,'movie')}}  class="shadow-lg h-72 w-48 2xl:h-80 2xl:w-60 hover:border-opacity-100 border-opacity-90 cursor-pointer border-2 border-white   rounded opacity-90 hover:opacity-100 transition duration-500 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
