@@ -17,7 +17,7 @@ export async function GET({params}) {
         }
     };
 
-    const data = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}/credits`, options)
+    const data = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}/aggregate_credits`, options)
         .then(res => res.json())
         .then(data => {
             return data;
