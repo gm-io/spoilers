@@ -3,14 +3,15 @@
     import { goto } from "$app/navigation";
     let query = '';
 
-    let SEARCH_QUERY = () =>{
-      console.log(query)
+    let SEARCH_QUERY = (e) =>{
+        if (e.key == "Enter")
+            goto(`/search/${query}`)
     }
 
-    let HANDLE_ENTER = (e) =>{
-        if (e.key == "Enter")
-            SEARCH_QUERY() 
-    }
+    // let HANDLE_ENTER = (e) =>{
+    //     if (e.key == "Enter")
+    //         SEARCH_QUERY() 
+    // }
 
     
     
@@ -24,6 +25,6 @@
         <LightSwitch />
     </div>
     <div class="w-4/6 2xl:w-4/6 pl-2 2xl:pl-0 mx-auto  h-full">
-        <input bind:value={query} on:keyup={HANDLE_ENTER} type="search" id="default-search" class="block rounded-2xl w-full p-4 py-2 pl-4 md:pl-10 text-sm text-gray-900 rounded-4xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="search dis ..." required>
+        <input bind:value={query} on:keyup={SEARCH_QUERY} type="text" id="default-search" class="block rounded-2xl w-full p-4 py-2 pl-4 md:pl-10 text-sm text-gray-900 rounded-4xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="search dis ..." required>
     </div>
 </div>
