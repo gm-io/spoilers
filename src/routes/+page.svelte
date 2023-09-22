@@ -1,7 +1,6 @@
 <script>
 	import Trending from '../components/Trending.svelte';
 	import LandingBackdrop from '../components/LandingBackdrop.svelte';
-    import SearchBar from '../components/SearchBar.svelte';
     import Lhs from '../components/LHS.svelte';
 	import Header from '../components/Header.svelte';
     import CascadedCarouselBackdrop from '../components/CascadedCarouselBackdrop.svelte';
@@ -11,7 +10,6 @@
 <div class="main-container px-1 scrollbar-hidden">
     <!-- <Header /> -->
     <div class="w-full lg:w-9/12 2xl:w-10/12 mx-auto flex flex-col">
-        <!-- <SearchBar /> -->
         <LandingBackdrop backdrop_data={data} image_url={data.week_trends[7]} />
         <div class="w-11/12 lg:w-full mx-auto ">
             <Trending trending_data={data} />
