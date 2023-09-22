@@ -7,12 +7,6 @@
         if (e.key == "Enter")
             goto(`/search/${query}`)
     }
-
-    // let HANDLE_ENTER = (e) =>{
-    //     if (e.key == "Enter")
-    //         SEARCH_QUERY() 
-    // }
-
     
     
 </script>

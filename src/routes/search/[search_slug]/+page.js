@@ -1,8 +1,13 @@
 export async function load({ params,fetch }) {
 
     let query = params.search_slug
+    const search_response = await fetch('/api/tmdb/search',{query})
+    let search_data = await search_response.json()
 
-    return {query}
+
+
+
+    return {status:"okay",search_data}
 
     // const response = await fetch('/api/spotify_access_token');
     // let access_token = await response.json();
