@@ -53,10 +53,13 @@
                         
 </script>
 <!-- <progress class="rounded-none" value={$timer/original}></progress> -->
+<div class="px-4">
+    <div class="h-3 w-full bg-opacity-60 mb-0 mx-auto bg-black"></div>
+</div>
 
 <div class="relative">
     {#key current}
-    <div in:fade class="relative w-full px-0 bg-black mb-4 bg-opacity-10">
+    <div in:fade class="relative w-full px-0 bg-black mb-0 bg-opacity-10">
         <div class=" relative">
             <div class="absolute bottom-0 left-0 right-0 m-auto flex w-fit space-x-6 p-3 z-50 font-bold text-white">
                 <div on:click={left_button} class="cursor-pointer opacity-30 hover:opacity-50 hover:scale-105">

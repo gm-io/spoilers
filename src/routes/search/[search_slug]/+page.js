@@ -7,6 +7,6 @@ export async function load({ params,fetch }) {
 
 
 
-    return {status:"okay",search_data}
+    return {status:"okay",query,search_data}
 
 }

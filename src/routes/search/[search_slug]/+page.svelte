@@ -14,6 +14,9 @@
 
 <!--separate all, tv, movies -->
 <div class=" w-9/12 mt-20 mx-auto">
+    <div class="pl-4">
+        Search for: {data.query}
+    </div>
     <div class="border-gray-300 w-11/12 mx-auto border-opacity-5 border-b my-6"></div>
     <div class="grid grid-cols-5 gap-y-8 justify-items-center">
     {#key page_1}
