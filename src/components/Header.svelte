@@ -7,8 +7,6 @@
         if (e.key == "Enter")
             goto(`/search/${query}`)
     }
-    
-    
 </script>
 
 <div class="flex relative w-full lg:w-9/12 2xl:w-10/12 h-fit mx-auto my-5 2xl:my-8">

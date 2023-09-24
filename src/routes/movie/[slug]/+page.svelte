@@ -27,9 +27,7 @@
 
 </script>
 
-<div>
-    <pre>{JSON.stringify(data, null, 2)}</pre>
-</div>
+
 
 <div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-10/12 mx-auto mt-10 2xl:mt-20">
     <div class="flex relative rounded-xl py-7 2xl:py-14">
@@ -95,6 +93,7 @@
         {/key}
 
     </div>
+    
 </div>
 
 <!-- <div>
