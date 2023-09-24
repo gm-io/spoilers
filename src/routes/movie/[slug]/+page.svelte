@@ -2,6 +2,7 @@
     export let data;
     import { goto } from '$app/navigation';
     import { modalStore } from '@skeletonlabs/skeleton';
+    import Cast from '../../../components/Cast.svelte';
 
     let trailer_modal = (trailer_key) =>{
         const modal = {
@@ -12,6 +13,7 @@
         modalStore.trigger(modal)
     }
 
+    console.log(data.credits)
 
     let goto_media_page = (id_number,media_type) =>{
         goto(`/${media_type}/${id_number}`)
@@ -76,6 +78,8 @@
     </div>
     <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div> -->
 
+    <Cast />
+
     <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
     <div class="similar-movies">
         <h1 class="text-gray-800 dark:text-gray-400 dark:text-opacity-70 my-2 pl-4">Similar Titles</h1>
@@ -93,9 +97,10 @@
         {/key}
 
     </div>
+
+    <div class="overflow-x-hidden">
+        <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
     
 </div>
 
-<!-- <div>
-    <pre>{JSON.stringify(data, null, 2)}</pre>
-</div> -->

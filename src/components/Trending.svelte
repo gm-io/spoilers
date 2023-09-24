@@ -13,9 +13,9 @@
             goto(`/${media_type}/${id_number}`)
     }
 
-</script>
+</script> 
 <div class="px-4">
-    <div class="h-3 w-12/12 bg-opacity-10 dark:bg-opacity-60 mb-3 mx-auto bg-black"></div>
+    <div class="h-3 w-12/12 bg-opacity-30 dark:bg-opacity-60 mb-3 mx-auto bg-black"></div>
 </div>
 <div class="tv-carousel mt-1 ">
     <div class="flex w-full ">
