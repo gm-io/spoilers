@@ -33,7 +33,7 @@
         {#each trending_data.week_trends as content (content.id)}
             {#if content.media_type == "movie" && tv_or_movie == "movie"}
                 <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(content.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(content.id,'movie',e)}} class="snap-center shrink-0 w-fit text-center cursor-pointer" >
-                    <img class="h-44 w-32 2xl:h-64 2xl:w-44 rounded drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                    <img class="h-44 w-32 2xl:h-64 2xl:w-44 border-2 rounded-lg border-black dark:border-opacity-20" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
                     <div class="h-12 w-32 2xl:w-36 mt-4 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
                             <div class="p-0 m-0 text-xs text-center">{content.title}</div>
                     </div>
