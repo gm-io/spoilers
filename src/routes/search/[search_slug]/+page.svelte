@@ -2,6 +2,12 @@
     export let data;
     console.log(data.status)
     console.log(data)
+    import { goto } from '$app/navigation';
+
+    let goto_media_page = (id_number,media_type) =>{
+        goto(`/${media_type}/${id_number}`)
+    }
+
 
     $:page_1 = data.search_data.results
 </script>
@@ -12,11 +18,11 @@
     <div class="grid grid-cols-5 gap-y-8 justify-items-center">
     {#key page_1}
         {#each page_1 as content}
-            <div class="h-fit w-48 ">
+            <div on:click={()=>{goto_media_page(content.id,content.media_type)}} class="h-fit w-48 ">
                 <!-- <img class="h-56 w-44 border-4 border-white rounde cursor-pointer" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} alt={content.title}> -->
                 <img class="h-64 w-44 border-4 border-primary-300 dark:border-opacity-20 border-opacity-40 rounded cursor-pointer" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} alt={content.title}>
 
-                <div class="w-44 text-center pt-2 text-sm px-2 font-bold">{content.media_type=="tv"?content.name:content.title}</div>
+                <div class="w-44 text-center pt-2 text-sm px-2 font-bold">{content.media_type=="tv" ? content.name : content.title}</div>
             </div>
         {/each}
     {/key}
