@@ -78,7 +78,7 @@
     </div>
     <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div> -->
 
-    <Cast />
+    <!-- <Cast /> -->
 
     <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
     <div class="similar-movies">
@@ -98,9 +98,9 @@
 
     </div>
 
-    <div class="overflow-x-hidden">
+    <!-- <div class="overflow-x-hidden">
         <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
+    </div> -->
     
 </div>
 
