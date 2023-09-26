@@ -34,6 +34,6 @@
 
 </div>
 
-<div class="overflow-x-hidden">
+<!-- <div class="overflow-x-hidden">
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div>
+</div> -->
