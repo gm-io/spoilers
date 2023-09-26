@@ -28,11 +28,11 @@
     <h1 class="text-gray-800 dark:text-gray-400 dark:text-opacity-70 my-2 pl-4">Cast</h1>
     <div class="grid grid-cols-5 gap-4">
         {#each cast_10 as cast}
-            <div class="flex bg-white bg-opacity-80 text-black">
+            <div class="flex bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-60 text-black">
                 <img class="h-32 rounded border object-cover border-white border-opacity-10" src={`https://image.tmdb.org/t/p/original${cast.profile_path}`} alt={`${cast.name} profile`}>
-                <div class="flex flex-col">
-                    <div class="">{cast.name}</div>
-                    <div class="">{cast.character}</div>
+                <div class="flex flex-col p-2">
+                    <div class="font-bold">{cast.name}</div>
+                    <div class="text-sm">{cast.character}</div>
                 </div>
 
             </div>
