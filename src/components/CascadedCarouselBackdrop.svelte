@@ -11,7 +11,7 @@
 		
 </script>
 
-<div class="relative w-full">
+<div class="relative w-full mt-8">
     <div class="mb-4 relative drop-shadow-lg">
         <div class="car h-96 overflow-y-hidden">
             <div class="snap-x snap-mandatory scroll-smooth gap-2 flex overflow-x-aut">

@@ -9,7 +9,7 @@
     }
 </script>
 <!-- <div class="h-5 w-9/12 bg-opacity-60 mt-1 mx-auto bg-black"></div> -->
-<div class="flex relative w-full lg:w-9/12 2xl:w-10/12 h-fit mx-auto my-6 mt-6 2xl:my-8">
+<div class="flex relative w-full lg:w-9/12 2xl:w-9/12 h-fit mx-auto my-6 mt-6 2xl:my-16 2xl:mt-8">
     <div class="absolute left-0 h-full flex items-center pl-4 pt-1">
         <div on:click={()=>goto(`/`)} class="cursor-pointer hover:bg-stone-800 text-white transition-all duration-300 bg-black p-3 py-1 bg-opacity-90 rounded text-xs sm:text-base 2xl:text-lg">Spoilers.IO</div>
     </div>

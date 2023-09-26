@@ -53,9 +53,9 @@
                         
 </script>
 <!-- <progress class="rounded-none" value={$timer/original}></progress> -->
-<div class="px-4">
+<!-- <div class="px-4">
     <div class="h-3 w-full bg-opacity-30 dark:bg-opacity-60 mb-0 mx-auto bg-black"></div>
-</div>
+</div> -->
 
 <div class="relative">
     {#key current}

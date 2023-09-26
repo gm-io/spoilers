@@ -1,7 +1,7 @@
 <script>
     export let data;
     
-    $:cast_10 = data.cast.slice(0,11)
+    $:cast_10 = data.cast.slice(0,20)
 </script>
 
 <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>

@@ -14,10 +14,10 @@
     }
 
 </script> 
-<div class="px-4">
+<!-- <div class="px-4">
     <div class="h-3 w-12/12 bg-opacity-30 dark:bg-opacity-60 mb-3 mx-auto bg-black"></div>
-</div>
-<div class="tv-carousel mt-1 ">
+</div> -->
+<div class="tv-carousel mt-10">
     <div class="flex w-full ">
         <div class="flex flex-col mb-4 pl-3 cursor-pointer">
             <!-- <div class="font-bold h mb-0">Trending August 2023<span class="h4"></span></div> -->
