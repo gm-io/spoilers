@@ -31,7 +31,7 @@
 
 
 
-<div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-10/12 mx-auto mt-10 2xl:mt-20">
+<div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-10 2xl:mt-12">
     <div class="flex relative rounded-xl py-7 2xl:py-14">
         <!-- <div class="h-full w-full bg-orange-400 absolute inset-0 -z-10"></div> -->
         <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full">
@@ -78,7 +78,9 @@
     </div>
     <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div> -->
 
-    <Cast data={data.credits}/>
+    <div class="2xl:mt-0">
+        <Cast data={data.credits}/>
+    </div>
 
     <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
     <div class="similar-movies">

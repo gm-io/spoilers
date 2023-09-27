@@ -57,7 +57,7 @@
     <div class="h-3 w-full bg-opacity-30 dark:bg-opacity-60 mb-0 mx-auto bg-black"></div>
 </div> -->
 
-<div class="relative">
+<div class="relative mt-8 xl:mt-10 2xl:mt-14">
     {#key current}
     <div in:fade class="relative w-full px-0 bg-black mb-0 bg-opacity-10">
         <div class=" relative">
