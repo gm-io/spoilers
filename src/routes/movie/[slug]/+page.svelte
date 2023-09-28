@@ -69,9 +69,9 @@
     <SimilarTitle data={data}/>
 
 
-    <div class="w-full flex mt-10 bg-black mb-4">
+    <!-- <div class="w-full flex mt-10 bg-black mb-4">
         <div class="w-fit mx-auto">-The End-</div>
-    </div>
+    </div> -->
 
     <!-- <div class="overflow-x-hidden">
         <pre>{JSON.stringify(data, null, 2)}</pre>

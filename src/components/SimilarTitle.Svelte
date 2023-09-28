@@ -30,8 +30,8 @@
         
     <div class="flex space-x-6 w-full overflow-x-scroll hide-scrollbar ">
         {#each similar_list as similar (similar.id)}
-        <div  class="flex flex-col " tabindex="0" role="button"  on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
-            <img class="h-56 w-44 rounded-lg drop-shadow-lg cursor-pointer border-2 border-white border-opacity-60" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={similar.title}>
+        <div  class="flex flex-col" tabindex="0" role="button"  on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
+            <img class="h-56 w-44 rounded-lg drop-shadow-lg cursor-pointer border 2xl:border-2 border-white border-opacity-60" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={similar.title}>
             <div class="cursor-pointer w-44 px-1 overflow-ellipsis mx-auto text-center pt-2 line-clamp-2">{similar.title}</div>
         </div>
         {/each}

@@ -18,7 +18,7 @@
                 {#each Array.from({ length: 7 }) as _ , i}
                 <div class="h-full w-full">
                     <img
-                        class="w-full h-96 object-cover"
+                        class="w-full h-96 object-cover border-white border 2xl:border-2 border-opacity-40 drop-shadow-lg"
                         src={`https://image.tmdb.org/t/p/original${tv_day_trends[i].backdrop_path}`}
                         alt={tv_day_trends[i].name}
                         loading="lazy"
