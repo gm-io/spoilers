@@ -1,7 +1,7 @@
 <script>
     export let data;
     
-    $:cast_10 = data.cast.slice(0,9)
+    $:cast_10 = data.cast.slice(0,11)
 </script>
 
 <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
@@ -37,7 +37,7 @@
 
     </div>
     <!-- <h1 class="text-gray-800 dark:text-gray-400 dark:text-opacity-70 my-3 mt-2 pl-4 2xl:text-xl tracking-wide">Cast</h1> -->
-    <div class="grid grid-cols-5 gap-4 mt-2">
+    <div class="grid grid-cols-5 gap-6 gap-y-8 mt-2">
        {#key cast_10} 
             {#each cast_10 as cast}
                 <div class="flex bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-60 rounded text-black">
@@ -48,8 +48,17 @@
                     </div>
 
                 </div>
-                
             {/each}
+            <div class="flex items-end pr-2 justify-end font-bold text-sm 2xl:text-base bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-60 rounded ">
+                <div class="flex h-fit items-center p-1 px-0 text-black hover:text-gray-600  dark:text-primary-300 cursor-pointer dark:hover:text-primary-200 border-primary-300 opacity-80 hover:opacity-90">
+                    <div class="tracking-tight underline">See All Cast & Crew</div>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 2xl:w-3 2xl:h-3">
+                        <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
+                    </svg> -->
+                </div>
+
+                  
+            </div>
         {/key}
     </div>
 </div>
