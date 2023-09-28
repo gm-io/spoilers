@@ -65,8 +65,9 @@
     </div>
     <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div> -->
 
-    <SimilarTitle data={data}/>
     <Cast data={data.credits}/>
+    <SimilarTitle data={data}/>
+
 
     <div class="w-full flex mt-10 bg-black mb-4">
         <div class="w-fit mx-auto">-The End-</div>
