@@ -33,7 +33,7 @@
         {#each trending_data.week_trends as content (content.id)}
             {#if content.media_type == "movie" && tv_or_movie == "movie"}
                 <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(content.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(content.id,'movie',e)}} class="snap-center shrink-0 w-fit text-center cursor-pointer" >
-                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 border 2xl:border-2 border-white rounded-lg border-opacity-40 drop-shadow-2xl" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 border 2xl:border-2 border-white rounded-lg border-opacity-40 drop-shadow-2xl" alt={content.title} src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
                     <div class="h-12 w-32 lg:w-36 2xl:w-44 mt-0 sm:mt-1 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
                             <div class="p-0 m-0 text-xs text-center line-clamp-2">{content.title}</div>
                     </div>
@@ -41,9 +41,9 @@
             {/if}
             {#if content.media_type == "tv" && tv_or_movie == "tv"}
                 <div role="button" tabindex="-1" on:click={()=>{goto_media_page(content.id,'tv')}} on:keyup={(e)=>{goto_media_page_keyHandler(content.id,'tv',e)}} class="cursor-pointer snap-center shrink-0 w-fit text-center" >
-                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 rounded drop-shadow-lg" alt="The project logo" src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
-                    <div class="h-12 w-32 mt-4 mb-1 lg:w-36 2xl:w-44 bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
-                            <div class="p-0 m-0 text-xs">{content.name}</div>
+                    <img class="h-44 w-32 lg:h-48 lg:w-36 2xl:h-64 2xl:w-44 border 2xl:border-2 border-white rounded-lg border-opacity-40 drop-shadow-2xl" alt={content.name} src={`https://www.themoviedb.org/t/p/original${content.poster_path}`} />
+                    <div class="h-12 w-32 lg:w-36 2xl:w-44 mt-0 sm:mt-1 mb-1  bg-opacity-50 rounded-2xl p-1  flex items-start justify-center text-left">
+                            <div class="p-0 m-0 text-xs text-center line-clamp-2 ">{content.name}</div>
                     </div>
                 </div>  
             {/if}
