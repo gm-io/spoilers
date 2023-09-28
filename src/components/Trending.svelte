@@ -17,13 +17,13 @@
 <!-- <div class="px-4">
     <div class="h-3 w-12/12 bg-opacity-30 dark:bg-opacity-60 mb-3 mx-auto bg-black"></div>
 </div> -->
-<div class="tv-carousel mt-10">
+<div class="tv-carousel mt-6 xl:mt-10">
     <div class="flex w-full ">
         <div class="flex flex-col mb-4 pl-3 cursor-pointer">
             <!-- <div class="font-bold h mb-0">Trending August 2023<span class="h4"></span></div> -->
             <RadioGroup class="-ml-4"  padding="px-2 py-0" active="variant-filled-primary" hover="hover:variant-soft-primary">  
-                <RadioItem class="text-sm lg:text-sm tracking-tight py-1 md:font-bold w-32 lg:w-fit" bind:group={tv_or_movie} name="justify" value={"movie"}>Trending Movies</RadioItem>
-                <RadioItem class="text-sm lg:text-sm tracking-tight py-1 md:font-bold w-32 lg:w-fit " bind:group={tv_or_movie} name="justify" value={"tv"}>Trending Series</RadioItem>
+                <RadioItem class="text-sm lg:text-sm tracking-tight py-1 md:font-bold xl:font-normal 2xl:font-bold w-32 md:w-36 xl:w-fit" bind:group={tv_or_movie} name="justify" value={"movie"}>Trending Movies</RadioItem>
+                <RadioItem class="text-sm lg:text-sm tracking-tight py-1 md:font-bold xl:font-normal 2xl:font-bold w-32 md:w-36 xl:w-fit" bind:group={tv_or_movie} name="justify" value={"tv"}>Trending Series</RadioItem>
             </RadioGroup>
         </div>
         <div class=" w-9/12 mx-auto border-t mt-5 border-black border-opacity-0 dark:border-gray-200 dark:border-opacity-0">
