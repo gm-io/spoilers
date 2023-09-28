@@ -1,7 +1,7 @@
 <script>
     export let data;
     
-    $:cast_10 = data.cast.slice(0,11)
+    $:cast_10 = data.cast.slice(0,10)
 </script>
 
 <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
@@ -37,14 +37,16 @@
 
     </div>
     <!-- <h1 class="text-gray-800 dark:text-gray-400 dark:text-opacity-70 my-3 mt-2 pl-4 2xl:text-xl tracking-wide">Cast</h1> -->
-    <div class="grid grid-cols-5 gap-6 gap-y-8 mt-2">
+    <div class="grid grid-cols-4 gap-6 gap-y-8 mt-2">
        {#key cast_10} 
             {#each cast_10 as cast}
-                <div class="flex bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-60 rounded text-black">
+                <div class="flex bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-60 rounded text-black max-h-32">
                     <img class="h-32 rounded border object-cover border-white border-opacity-10" src={`https://image.tmdb.org/t/p/original${cast.profile_path}`} alt={`${cast.name} profile`}>
-                    <div class="flex flex-col p-2">
+                    <div class="flex flex-col p-2 ">
                         <div class="font-bold">{cast.name}</div>
-                        <div class="text-sm">{cast.character}</div>
+                        <div class="text-ellipsis hover:text-clip overflow-hidden">
+                            <div class="text-sm ">{cast.character}</div>
+                        </div>
                     </div>
 
                 </div>
