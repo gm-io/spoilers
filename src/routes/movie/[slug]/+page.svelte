@@ -3,6 +3,7 @@
     import { goto } from '$app/navigation';
     import { modalStore } from '@skeletonlabs/skeleton';
     import Cast from '../../../components/Cast.svelte';
+    import SimilarTitle from '../../../components/SimilarTitle.svelte';
 
     let trailer_modal = (trailer_key) =>{
         const modal = {
@@ -25,7 +26,6 @@
 
     let details_css ='dark:text-white text-gray-700 font-normal'
 
-    $:similar_list = data.similar.results.slice(0,16)
 
 </script>
 
@@ -65,25 +65,13 @@
     </div>
     <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div> -->
 
+    <SimilarTitle data={data}/>
     <Cast data={data.credits}/>
 
-    <div class="border-gray-300 border-opacity-10 border-b mt-6"></div>
-    <div class="similar-movies">
-        <h1 class="text-gray-800 dark:text-gray-400 dark:text-opacity-70 my-2 pl-4">Similar Titles</h1>
-        {#key similar_list}
-            
-        <div class="flex space-x-6 w-full overflow-scroll hide-scrollbar ">
-            {#each similar_list as similar (similar.id)}
-            <div  class="flex flex-col " tabindex="0" role="button"  on:click={()=>{goto_media_page(similar.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(similar.id,'movie',e)}} >
-                <img class="h-56 w-44 rounded-lg cursor-pointer" src={`https://www.themoviedb.org/t/p/original${similar.poster_path}`} alt={data.title}>
-                <div class="cursor-pointer w-44 px-1 mx-auto text-center pt-2">{similar.title}</div>
-
-            </div>
-            {/each}
-        </div>
-        {/key}
-
+    <div class="w-full flex mt-10 bg-black mb-4">
+        <div class="w-fit mx-auto">-The End-</div>
     </div>
+
     <!-- <div class="overflow-x-hidden">
         <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
