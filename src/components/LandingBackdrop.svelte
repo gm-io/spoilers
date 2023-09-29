@@ -74,19 +74,19 @@
                 </div>
             </div>
             <div class="absolute right-0 z-40 w-fit flex items-center px-2 mr md:mr-6 2xl:mr-16  h-full">
-                <img on:click={()=>{goto_media_page(movie_day_trends[current].id,'movie')}}  class="shadow-lg h-72 w-48 2xl:h-80 2xl:w-60 hover:border-opacity-100 border-opacity-90 cursor-pointer border-2 border-white   rounded opacity-90 hover:opacity-100 transition duration-500 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
+                <img on:click={()=>{goto_media_page(movie_day_trends[current].id,'movie')}}  class="shadow-lg h-44 w-32 sm:h-72 sm:w-48 2xl:h-80 2xl:w-60 hover:border-opacity-100 border-opacity-90 cursor-pointer border-2 border-white   rounded opacity-90 hover:opacity-100 transition duration-500 drop-shadow-lg" src={`https://www.themoviedb.org/t/p/original${movie_day_trends[current].poster_path}`}  alt={movie_day_trends.title}>
             </div>
             <div class="absolute inset-0 flex items-end">
-                <div class="w-[100%] text h-[100%] px-8 py-4 text-white bg-black bg-opacity-20 flex items-center">
-                    <div class="flex flex-col space-y-4 p-2 h-fit">
+                <div class="w-[100%] text h-[100%] px-2 pr-0 md:px-8 py-4 text-white bg-black bg-opacity-20 flex items-center">
+                    <div class="flex flex-col space-y-4 p-2 h-fit w-2/3 bg-orange-700 bg-opacity-0">
                         <!-- <p class="h1 font-bold text-indigo-400">{movie_day_trends[current].title}</p> -->
-                        <p class="h1 font-bold text-white">{movie_day_trends[current].title}</p>
-                        <p class=" text-xs tracking-wide  text-white font-bold w-full lg:w-2/3">{movie_day_trends[current].overview}</p>
-                        <div class="flex gap-4">
+                        <p class="h1 lg:h1 font-bold text-white line-clamp-6">{movie_day_trends[current].title}</p>
+                        <p class="hidden md:flex text-xs tracking-wide  text-white font-bold w-full lg:w-2/3">{movie_day_trends[current].overview}</p>
+                        <div class="hidden md:flex gap-4">
                             <p class="text-xs">Rating: {parseFloat(movie_day_trends[current].vote_average).toFixed(1)}</p>
                             <p class="text-xs">🇺🇸 English</p>
                         </div>
-                        <div class="">
+                        <div class="hidden md:flex">
                             <button on:click={()=>{goto_media_page(movie_day_trends[current].id,'movie')}} type="button" class="btn variant-filled-primary">Watch Trailer</button>
                         </div>
                     </div>
@@ -99,6 +99,3 @@
     </div>
     {/key}
 </div>
-
-
-<!-- <hr class="h-px ml-6 mt-3 bg-gray-200 border-0 dark:bg-gray-700"> -->
