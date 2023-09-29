@@ -78,10 +78,10 @@
             </div>
             <div class="absolute inset-0 flex items-end">
                 <div class="w-[100%] text h-[100%] px-2 pr-0 md:px-8 py-4 text-white bg-black bg-opacity-20 flex items-center">
-                    <div class="flex flex-col space-y-4 p-2 h-fit w-2/3 bg-orange-700 bg-opacity-0">
+                    <div class="flex flex-col space-y-4 p-2 h-fit w-2/3 lg:w-8/12 bg-orange-700 bg-opacity-0">
                         <!-- <p class="h1 font-bold text-indigo-400">{movie_day_trends[current].title}</p> -->
                         <p class="h1 lg:h1 font-bold text-white line-clamp-6">{movie_day_trends[current].title}</p>
-                        <p class="hidden md:flex text-xs tracking-wide  text-white font-bold w-full lg:w-2/3">{movie_day_trends[current].overview}</p>
+                        <p class="hidden md:flex text-xs tracking-wide  text-white font-bold w-full ">{movie_day_trends[current].overview}</p>
                         <div class="hidden md:flex gap-4">
                             <p class="text-xs">Rating: {parseFloat(movie_day_trends[current].vote_average).toFixed(1)}</p>
                             <p class="text-xs">🇺🇸 English</p>
