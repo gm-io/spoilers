@@ -35,7 +35,7 @@
             <div class="relative h-full w-full p-1 2xl:p-0 ">
                 {#if data.backdrop_path }
                     <img class="rounded object-cover h-full w-full blur-md" alt="The project logo" src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} />
-                    <div class="absolute inset-0 bg-white bg-opacity-60 dark:bg-black dark:opacity-80"></div>
+                    <div class="absolute inset-0 bg-white bg-opacity-60 dark:bg-black md:dark:opacity-80 dark:opacity-50 "></div>
                 {/if}
             </div>
         </div>

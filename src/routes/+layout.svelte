@@ -30,6 +30,6 @@
                                 
 </script>
 <Header />
-<Modal components={modalComponentRegistry} regionBackdrop="backdrop-blur-md bg-surface-900/40"/>
+<Modal components={modalComponentRegistry} regionBackdrop="backdrop-blur-md bg-surface-900/40" />
 <slot>
 </slot>
