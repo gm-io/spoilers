@@ -29,10 +29,10 @@
 
 </script>
 
-<div class="w-full px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-10 2xl:mt-12">
+<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12">
     <div class="flex relative flex-col md:flex-row rounded-xl py-7 2xl:py-14">
-        <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full">
-            <div class="relative p-1 2xl:p-0">
+        <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full md:bg-none">
+            <div class="relative h-full w-full p-1 2xl:p-0 ">
                 {#if data.backdrop_path }
                     <img class="rounded object-cover h-full w-full blur-md" alt="The project logo" src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} />
                     <div class="absolute inset-0 bg-white bg-opacity-60 dark:bg-black dark:opacity-80"></div>
@@ -74,7 +74,7 @@
                 <p class="">Production: <span class={details_css}>{data.production_companies.map((production_company)=> " "+ production_company.name )}</span></p>
                 <p class="">Runtime: <span class={details_css}>{data.runtime} minutes</span></p>
             </div>
-             <div class="flex space-x-4 pt-4 w-full bg-green-500 overflow-hidden">
+             <div class="flex space-x-4 pt-4 w-full overflow-hidden">
                 {#each data.trailers as trailer, index}
                     <button on:click={()=> trailer_modal(trailer.key)} type="button" class="btn variant-filled-primary">{`Trailer ${index+1}`}</button>
                 {/each}
