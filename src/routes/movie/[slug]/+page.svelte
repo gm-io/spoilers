@@ -58,7 +58,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-1  w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
-                          </svg>                          
+                        </svg>                          
                     </button>
                 </div>
             </div>
@@ -76,7 +76,12 @@
             </div>
              <div class="flex space-x-4 pt-4 w-full overflow-hidden">
                 {#each data.trailers as trailer, index}
-                    <button on:click={()=> trailer_modal(trailer.key)} type="button" class="btn variant-filled-primary">{`Trailer ${index+1}`}</button>
+                    <button on:click={()=> trailer_modal(trailer.key)} type="button" class="btn variant-filled-primary">
+                        {`Trailer ${index+1}`}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-1 w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                          </svg>                            
+                    </button>
                 {/each}
             </div>
         </div>
