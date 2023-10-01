@@ -14,7 +14,7 @@
 
 <!--separate all, tv, movies -->
 <div class=" w-full lg:w-9/12 mt-20 mx-auto">
-    <div class="pl-2">
+    <div class="bg-green-5 flex justify-center">
         Search for: {data.query}
     </div>
     <div class="border-gray-300 w-11/12 mx-auto border-opacity-5 border-b my-6"></div>
