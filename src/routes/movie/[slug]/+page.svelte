@@ -3,7 +3,7 @@
     import { goto } from '$app/navigation';
     import { modalStore } from '@skeletonlabs/skeleton';
     import Cast from '../../../components/Cast.svelte';
-    import SimilarTitle from '../../../components/SimilarTitle.svelte';
+    import SimTitle from '../../../components/SimTitle.svelte';
 
     let trailer_modal = (trailer_key) =>{
         const modal = {
@@ -93,7 +93,7 @@
     <!-- <div class="border-gray-300 border-opacity-10 border-b mt-6"></div> -->
 
     <Cast data={data.credits}/>
-    <SimilarTitle data={data}/>
+    <SimTitle similar_title_data={data} />
 
 
     <!-- <div class="w-full flex mt-10 bg-black mb-4">

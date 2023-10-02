@@ -1,8 +1,8 @@
 <script>
     import { goto } from '$app/navigation';
 
-    export let data;
-    $:similar_list = data.similar.results.slice(0,16)
+    export let similar_title_data;
+    $:similar_list = similar_title_data.similar.results.slice(0,16)
     console.log
 
     let goto_media_page = (id_number,media_type) =>{
