@@ -14,6 +14,14 @@
         modalStore.trigger(modal)
     }
 
+    let cast_modal =() =>{
+        const modal = {
+            type: 'component',
+            component: 'modalComponentThree'
+        }
+        modalStore.trigger(modal)
+    }
+
     console.log(data.credits)
 
     let goto_media_page = (id_number,media_type) =>{

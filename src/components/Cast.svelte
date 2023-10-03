@@ -1,6 +1,18 @@
 <script>
+    import { modalStore } from '@skeletonlabs/skeleton';
     export let data;
     $:cast_10 = data.cast.slice(0,10)
+
+    let cast_modal =() =>{
+        console.log("cast modal")
+        const modal = {
+            type: 'component',
+            component: 'modalComponentThree',
+            meta:{all_cast:data}
+        }
+        modalStore.trigger(modal)
+    }
+
 </script>
 <div class="w-full flex flex-col overflow-hidden px-1 md:px-0">
     <div class="flex  pl-1 mt-6 md:mt-8 2xl:mt-10 mb-3 items-center opacity-70 dark:opacity-100 w-fit pr-2 dark:bg-black py-1 rounded">
@@ -23,7 +35,7 @@
             {/each}
             <div class="flex items-end pr-2 justify-start md:justify-end font-bold text-sm 2xl:text-base md:bg-white md:bg-opacity-80 md:dark:bg-black md:dark:bg-opacity-60 rounded col-span-2 md:col-span-1 ">
                 <div class="flex h-fit items-center p-1 px-0 text-black hover:text-gray-600  dark:text-primary-300 cursor-pointer dark:hover:text-primary-200 border-primary-300 opacity-80 hover:opacity-90">
-                    <div class="tracking-tight underline text-sm 2xl:text-base">See All Cast & Crew</div>
+                    <div on:click={cast_modal} class="tracking-tight underline text-sm 2xl:text-base">See All Cast & Crew</div>
                 </div>
             </div>
         {/key}

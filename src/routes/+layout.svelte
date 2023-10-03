@@ -13,6 +13,7 @@
     import "../app.postcss";
     import Header from '../components/Header.svelte';
     import YoutubeLink from '../components/modals/YoutubeLink.svelte';
+    import SeeAllCast from '../components/modals/SeeAllCast.svelte';
 
     const modalComponentRegistry = {
         modalComponentOne: {
@@ -26,6 +27,9 @@
         modalComponentTwo: {
             ref: YoutubeLink,
         },
+        modalComponentThree:{
+            ref: SeeAllCast,
+        }
     };
                                 
 </script>
