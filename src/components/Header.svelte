@@ -10,7 +10,9 @@
 </script>
 <div class="flex relative w-full lg:w-9/12 2xl:w-9/12 h-fit mx-auto mt-6 md:mt-10 2xl:mt-12">
     <div class="absolute left-0 h-full flex items-center pl-2 sm:pl-4 pt-1">
-        <div on:click={()=>goto(`/`)} class="cursor-pointer hover:bg-stone-800 text-white transition-all duration-300 bg-black p-1 sm:p-3 py-2 sm:py-1 bg-opacity-90 rounded text-xs sm:text-base 2xl:text-lg">Spoilers.IO</div>
+        <a href="/">
+            <div  class="cursor-pointer hover:bg-stone-800 text-white transition-all duration-300 bg-black p-1 sm:p-3 py-2 sm:py-1 bg-opacity-90 rounded text-xs sm:text-base 2xl:text-lg">Spoilers.IO</div>
+        </a>
     </div>
     <div class="absolute right-0 h-full flex items-center pr-2 xl:pr-2 pt-1">
         <LightSwitch height="h-5 2xl:h-6" width="w-10 2xl:w-12" />
@@ -24,3 +26,7 @@
         <input bind:value={query} on:keyup={SEARCH_QUERY} type="text" id="default-search" class="block rounded-2xl w-full p-4 py-2 pl-8 md:pl-10 text-base md:text-sm text-gray-900 rounded-4xl bg-gray-50 focus:ring-blue-500 dark:focus:outline-white focus:outline-gray-600  dark:focus:border-white focus:border-gray-600 dark:bg-primary-200 dark:border-gray-600 sm:font-bold dark:text-black dark:placeholder-black" placeholder="" required>
     </div>
 </div>
+<!-- 
+<a href="/"> </a>
+
+on:click={()=>goto(`/`)} -->

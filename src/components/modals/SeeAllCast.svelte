@@ -12,9 +12,15 @@
 
 {#if $modalStore[0]}
 	<div class="modal-example-form {cBase} max-h-[75vh] overflow-hidden">
-        {#each cast as person }
+        <div class="cast flex flex-col">
+            <div class="">Cast</div>
+        </div>
+        <div class="crew">
+            <div class="">Crew</div>
+        </div>
+        <!-- {#each cast as person }
             <div class="">{person.name}</div>
-        {/each}
+        {/each} -->
         
         <footer class="modal-footer {parent.regionFooter}">
             <button class="btn {parent.buttonNeutral}" on:click={parent.onClose}>Close</button>
