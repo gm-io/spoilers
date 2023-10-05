@@ -25,8 +25,12 @@
     <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-6 gap-y-4 md:gap-y-8 px-1 md:px-0">
        {#key cast_10} 
             {#each cast_10 as cast}
-                <div class="flex flex-col pt-1 md:pt-0 md:flex-row bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-40 items-center md:dark:bg-opacity-60 rounded-lg md:rounded text-black max-h-fit md:max-h-32">
-                    <img class="my-2 md:my-0 h-20 w-20 md:h-32 md:w-auto aspect-square md:aspect-auto rounded-full md:rounded border-2 md:border-none object-cover border-white border-opacity-40 md:border-opacity-10" src={`https://image.tmdb.org/t/p/original${cast.profile_path}`} alt={`${cast.name} profile`}>
+                <div class="flex relative flex-col pt-1 md:pt-0 md:flex-row bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-40 items-center md:dark:bg-opacity-60 rounded-lg md:rounded text-black max-h-fit md:max-h-32">
+                    {#if cast.profile_path }
+                        <img class="my-2 md:my-0 h-20 w-20 md:h-32 md:w-auto aspect-square md:aspect-auto rounded-full md:rounded border-2 md:border-none object-cover border-white border-opacity-40 md:border-opacity-10" src={`https://image.tmdb.org/t/p/original${cast.profile_path}`} alt={`${cast.name}'s profile`}>
+                    {:else}
+                        <img class="my-2 md:my-0 h-20 w-20 bg-black opacity-10 md:h-32 md:w-auto aspect-square md:aspect-auto rounded-full md:rounded-none border-2 md:border-none object-cover border-white border-opacity-40 md:border-opacity-10" src='/images/default_person_image.png' alt={`${cast.name}'s profile`}>
+                    {/if}
                     <div class="flex flex-col md:p-2 p-0 text-center md:text-left mb-2">
                         <div class="font-bold text-xs md:text-base line-clamp-2">{cast.name}</div>
                         <div class="text-xs pt-1 md:pt-0 line-clamp-2 ">{cast.character}</div>
