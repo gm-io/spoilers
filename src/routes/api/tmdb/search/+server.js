@@ -15,10 +15,8 @@ export async function GET({url}) {
         throw error(400, 'query must be specified');
     }
     const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${tmdb_access_token}`
+        method: 'GET', headers: {
+            accept: 'application/json', Authorization: `Bearer ${tmdb_access_token}`
         }
     };
 
@@ -27,7 +25,11 @@ export async function GET({url}) {
         .then(data => {
             return data;
         })
-    return json(data);
+    // return json(data);
+    // return json(data.filter(item => item.media_type === 'movie' || item.media_type === 'tv'));
+    return json({
+        ...data, results: data.results.filter(item => !(item.media_type === 'person' || item.poster_path === null)),
+    })
 
 }
 
