@@ -28,7 +28,7 @@ export async function GET({url}) {
     // return json(data);
     // return json(data.filter(item => item.media_type === 'movie' || item.media_type === 'tv'));
     return json({
-        ...data, results: data.results.filter(item => item.media_type === 'movie' || item.media_type === 'tv'),
+        ...data, results: data.results.filter(item => !(item.media_type === 'person' || item.poster_path === null)),
     })
 
 }
