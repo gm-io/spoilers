@@ -11,13 +11,13 @@
 </script>
 
 {#if $modalStore[0]}
-	<div class="modal-example-form card px-8 py-6 max-h-[75vh] max-w-[85vw] w-[80vw] overflow-y-scroll">
+	<div class="modal-example-form card px-8 py-6 max-h-[75vh] max-w-[85vw] w-[80vw] overflow-none">
         <div class="flex flex-col">
             <div class="cast">
-                <div class="text-sm font-bold text-opacity-20 text-white pb-3">Full Cast</div>
-                <div class="grid grid-cols-6 gap-3 gap-x-4">
+                <div class="text-sm font-bold dark:text-opacity-20 text-opacity-60 dark:text-white text-gray-600 pb-3">Full Cast</div>
+                <div class="grid grid-cols-4 lg:grid-cols-6 gap-3 gap-x-4">
                     {#each cast as person }
-                        <div class="flex flex-col pt-1 md:pt-0 md:flex-row border border-white border-opacity-10 bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-40 items-center md:dark:bg-opacity-60 rounded-lg md:rounded text-black max-h-fit h-fit md:max-h-32">
+                        <div class="flex flex-col pt-1 md:pt-0 md:flex-row dark:border border-white border-opacity-10 bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-40 items-center md:dark:bg-opacity-60 rounded-lg md:rounded text-black max-h-fit h-fit md:max-h-32">
                             {#if person.profile_path}
                                 <img class="my-2 md:my-0 h-20 w-20 md:h-12 md:w-auto aspect-square md:aspect-auto rounded-full md:rounded-none border-2 md:border-none object-cover border-white border-opacity-40 md:border-opacity-10" src={`https://image.tmdb.org/t/p/original${person.profile_path}`} alt={`${person.name} profile`}>
 
@@ -40,8 +40,8 @@
             <div class="">{person.name}</div>
         {/each} -->
         
-        <footer class="modal-footer {parent.regionFooter}">
-            <button class="btn btn-sm text-white text-opacity-20 {parent.buttonNeutral}" on:click={parent.onClose}>Close</button>
+        <footer class="modal-footer mt-4 {parent.regionFooter}">
+            <button class="btn btn-sm dark:text-white dark:text-opacity-20 text-gray-600 text-opacity-90 bg-white bg-opacity-40 text-xs {parent.buttonNeutral}" on:click={parent.onClose}>Close</button>
         </footer>    
 	</div>
 {/if}
