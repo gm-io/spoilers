@@ -11,11 +11,11 @@
 </script>
 
 {#if $modalStore[0]}
-	<div class="modal-example-form card px-8 py-6 max-h-[75vh] max-w-[85vw] w-[80vw] overflow-none">
+	<div class="hidden md:flex flex-col  modal-example-form card px-8 py-6 max-h-[75vh] max-w-[85vw] w-[80vw] overflow-none">
         <div class="flex flex-col">
             <div class="cast">
                 <div class="text-sm font-bold dark:text-opacity-20 text-opacity-60 dark:text-white text-gray-600 pb-3">Full Cast</div>
-                <div class="grid grid-cols-4 lg:grid-cols-6 gap-3 gap-x-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-3 gap-x-4">
                     {#each cast as person }
                         <div class="flex flex-col pt-1 md:pt-0 md:flex-row dark:border border-white border-opacity-10 bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-40 items-center md:dark:bg-opacity-60 rounded-lg md:rounded text-black max-h-fit h-fit md:max-h-32">
                             {#if person.profile_path}

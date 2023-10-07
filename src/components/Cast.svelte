@@ -38,7 +38,7 @@
                 </div>
             {/each}
             <div class="flex items-end pr-2 justify-start md:justify-end font-bold text-sm 2xl:text-base md:bg-white md:bg-opacity-80 md:dark:bg-black md:dark:bg-opacity-60 rounded col-span-2 md:col-span-1 ">
-                <div class="flex h-fit items-center p-1 px-0 text-black hover:text-gray-600  dark:text-primary-300 cursor-pointer dark:hover:text-primary-200 border-primary-300 opacity-80 hover:opacity-90">
+                <div class=" hidden md:flex h-fit items-center p-1 px-0 text-black hover:text-gray-600  dark:text-primary-300 cursor-pointer dark:hover:text-primary-200 border-primary-300 opacity-80 hover:opacity-90">
                     <div on:click={cast_modal} class="tracking-tight underline text-sm 2xl:text-base">Full Cast</div>
                 </div>
             </div>
