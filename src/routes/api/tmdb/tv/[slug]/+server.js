@@ -28,21 +28,35 @@ export async function GET({params}) {
         })
 
     let season_data = []
+    //
+    // for (let i = 1; i <= tv_data['number_of_seasons']; i++) {
+    //     season_data[i - 1] = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}/season/${i}`, options)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             return data;
+    //         })
+    //         .catch(err => {
+    //             return err;
+    //         })
+    // }
 
+
+// Create an array of fetch promises for all seasons
+    let fetchPromises = [];
     for (let i = 1; i <= tv_data['number_of_seasons']; i++) {
-        season_data[i - 1] = await fetch(`https://api.themoviedb.org/3/tv/${tv_id}/season/${i}`, options)
+        let fetchPromise = fetch(`https://api.themoviedb.org/3/tv/${tv_id}/season/${i}`, options)
             .then(res => res.json())
-            .then(data => {
-                return data;
-            })
-            .catch(err => {
-                return err;
-            })
+            .catch(err => err);
+
+        fetchPromises.push(fetchPromise);
     }
 
-    tv_data['seasons'] = season_data;
+// Use Promise.all to wait for all fetch operations to complete
+    season_data = await Promise.all(fetchPromises);
+
 
     return json({
         ...tv_data,
+        seasons: season_data,
     });
 }
