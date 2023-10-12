@@ -4,24 +4,20 @@ image div dimensions:
 44x32
 
 #todo general
--do a lot of responsive design
 
 #todo for landing page:
 -add a ux visual aid for the trending slider
--make the text for carousel description responsive
 -Expeiriment with indivudual component animation within the main carousel on-change
--get icons for trending radio
 -add a mini link for advanced search
--request trailer data for daily trending
 
 ##todo for movie page:
--sort similar movies and Expeiriment with the possibility of limiting the number of recommendations 
 -add images to show the streaming services that the movies belong to
 -get reklease day for movies
 -color cordinate release dates
-- create svg image for shows without images
 - request screenshots for movies
-- add section for cast
+-fix similar movie list
+-sort similar movies and Expeiriment with the possibility of limiting the number of recommendations 
+
 
 
 ###todo for tv show page:
