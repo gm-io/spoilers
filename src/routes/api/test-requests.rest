@@ -1,0 +1,12 @@
+### Search
+GET http://localhost:5173/api/tmdb/search?query=batman
+
+
+### Movie Details
+GET http://localhost:5173/api/tmdb/movie/414906
+
+### Movie Credits
+GET http://localhost:5173/api/tmdb/movie/414906/credits
+
+### Movie Credits With Long Crew List
+GET http://localhost:5173/api/tmdb/movie/299536/credits
