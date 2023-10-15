@@ -1,7 +1,16 @@
 <script>
     import { modalStore } from '@skeletonlabs/skeleton';
+    import { goto } from '$app/navigation';
     export let data;
     $:cast_10 = data.cast.slice(0,10)
+
+    let goto_media_page = (id_number,media_type) =>{
+        goto(`/${media_type}/${id_number}`)
+    }
+    let goto_media_page_keyHandler = (id_number,media_type,e) =>{
+        if (e.key == 'Enter' )
+            goto(`/${media_type}/${id_number}`)
+    }
 
     let cast_modal =() =>{
         console.log("cast modal")
@@ -25,7 +34,7 @@
     <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-6 gap-y-4 md:gap-y-8 px-1 md:px-0">
        {#key cast_10} 
             {#each cast_10 as cast}
-                <div class="flex relative flex-col pt-1 md:pt-0 md:flex-row bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-40 items-center md:dark:bg-opacity-60 rounded-lg md:rounded text-black max-h-fit md:max-h-32">
+                <div on:click={()=>{goto_media_page(cast.id,'person')}} on:keyup={(e)=>{goto_media_page_keyHandler(cast.id,'person',e)}} class="flex cursor-pointer relative flex-col pt-1 md:pt-0 md:flex-row bg-white dark:bg-black dark:text-white bg-opacity-80 dark:bg-opacity-40 items-center md:dark:bg-opacity-60 rounded-lg md:rounded text-black max-h-fit md:max-h-32">
                     {#if cast.profile_path }
                         <img class="my-2 md:my-0 h-20 w-20 md:h-32 md:w-auto aspect-square md:aspect-auto rounded-full md:rounded border-2 md:border-none object-cover border-white border-opacity-40 md:border-opacity-10" src={`https://image.tmdb.org/t/p/original${cast.profile_path}`} alt={`${cast.name}'s profile`}>
                     {:else}
