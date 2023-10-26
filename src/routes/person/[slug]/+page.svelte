@@ -1,6 +1,8 @@
 <script>
+    import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
     export let data;
     let person = data.data
+    let value = 0
 </script>
 
 this is a person page
@@ -12,6 +14,12 @@ this is a person page
 <div class="">From: {person.place_of_birth}</div>
 <div class="">Image: {person.profile_path}</div>
 <div class="">Department: {person.known_for_department}</div>
+<RadioGroup active="variant-filled-primary" hover="hover:variant-soft-primary">
+    <RadioItem bind:group={value} name="justify" value={0}>Movie</RadioItem>
+	<RadioItem bind:group={value} name="justify" value={1}>TV</RadioItem>
+
+</RadioGroup>
+
 
 <div class="border-b border-4 border-black w-full my-2"></div>
 <div class=""></div>

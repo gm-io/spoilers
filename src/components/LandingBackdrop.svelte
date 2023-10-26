@@ -81,7 +81,7 @@
                     <div class="flex flex-col space-y-4 p-2 h-fit w-2/3 lg:w-8/12 bg-orange-700 bg-opacity-0">
                         <!-- <p class="h1 font-bold text-indigo-400">{movie_day_trends[current].title}</p> -->
                         <p class="h1 lg:h1 font-bold text-white line-clamp-6">{movie_day_trends[current].title}</p>
-                        <p class="hidden md:flex text-xs tracking-wide  text-white font-bold w-full ">{movie_day_trends[current].overview}</p>
+                        <p class="hidden md:flex text-xs 2xl:text-base tracking-wide  text-white font-bold w-full ">{movie_day_trends[current].overview}</p>
                         <div class="hidden md:flex gap-4">
                             <p class="text-xs">Rating: {parseFloat(movie_day_trends[current].vote_average).toFixed(1)}</p>
                             <p class="text-xs">🇺🇸 English</p>
