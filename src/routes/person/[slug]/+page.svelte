@@ -39,17 +39,21 @@
                 {/if}
             </div>
         </div>
-        <div class="mobile-details flex md:hidden flex-col pl-2">
-            <p class="h3 font-bold">{person.name}</p>
-            {#if person.known_for_department == "Directing"}
-                <div class="">Director</div>
-            {:else}
-                <div class="">{person.gender!=1?"Actor":"Actress"}</div>
-            {/if}
-        </div>
+
         <div class="flex">
-            <div class="poster w-1/2 md:w-fit h-fit md:bg-white p-2 rounded-2xl ml-0 md:ml-4 2xl:ml-16">
+            <div class="poster w-1/3 md:w-fit h-fit md:bg-white p-2 rounded-2xl ml-16 md:ml-4 2xl:ml-16">
                 <img class="h-64 md:h-72 border border-white rounded md:rounded-none" src={`https://www.themoviedb.org/t/p/original${person.profile_path}`} alt={person.name}>
+            </div>
+            <div class="mobile-details flex md:hidden flex-col pl-2 ">
+                <div class=" my-auto">
+                    <p class="h3 font-bold">{person.name}</p>
+                    {#if person.known_for_department == "Directing"}
+                        <div class="">Director</div>
+                    {:else}
+                        <div class="">{person.gender!=1?"Actor":"Actress"}</div>
+                    {/if}
+                </div>
+
             </div>
         </div>
         <div class="details hidden w-3/5 md:w-4/5   pl-6 md:flex md:flex-col h-fit my-auto">
