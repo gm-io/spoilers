@@ -2,32 +2,12 @@
     import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
     export let data;
     let person = data.data
+    let media = data.data.appears_in.cast
     let value = 0
+
+    let tv_or_movie = "movie"
+
 </script>
-
-
-
-
-<!-- <div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12 ">
-    <div class="bg-black bg-opacity-70 w-full h-[400px] flex">
-        <div class="pl-10 h-full w-1/3 flex items-center">
-            <div class=" w-fit h-fit p-1 bg- rounded-lg bg-opacity-60">
-                <img class=" h-72  border-white" src={`https://www.themoviedb.org/t/p/original${person.profile_path}`} alt={person.name}>
-            </div>
-        </div>
-        <div class=" w-2/3 ">
-            <div class="">
-                <p class="h3 font-bold">{person.name}</p>
-                <div class="text-sm">{(person.gender==1 & person.known_for_department=="Acting")?"Actress":"Actor"}</div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="overflow-x-hidden">
-    <pre>{JSON.stringify(data, null, 2)}</pre>
-</div> -->
 
 <div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12">
     <div class="flex relative flex-col md:flex-row rounded-xl py-7 2xl:py-14 ">
@@ -70,14 +50,35 @@
     </div>
 </div>
 
-<div class="bg-y mt-4 flex justify-center">
+<div class="mt-4 flex justify-center">
     <div class="w-fit flex flex-col">
         <RadioGroup>
-            <RadioItem bind:group={value} name="justify" value={0}>TV</RadioItem>
-            <RadioItem bind:group={value} name="justify" value={1}>Movies</RadioItem>
+            <RadioItem bind:group={tv_or_movie} name="justify" value={"movie"}>Movies</RadioItem>
+            <RadioItem bind:group={tv_or_movie} name="justify" value={"tv"}>TV</RadioItem>
         </RadioGroup>
     </div>
+</div>
 
+<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-2">
+    <div class="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-3">
+        {#each media as thismedia }
+            {#if thismedia.media_type == "movie" && tv_or_movie=="movie" && thismedia.poster_path}
+
+                <div class="bg-black my-1 flex">
+                    <img class="h-44 w-32 lg:h-44 lg:w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.title}>
+                    <div class="flex flex-col">
+                        <div class="">{thismedia.title}</div>
+                        <div class="">{thismedia.release_date.slice(0,4)}</div>
+                        <div class="">As {thismedia.character}</div>
+                    </div>
+                </div>
+            {:else if thismedia.media_type == "tv" && tv_or_movie=="tv" && thismedia.poster_path }
+                <div class="bg-green-900 my-1">
+                    <div class="">{thismedia.name}</div>
+                </div>
+            {/if}
+        {/each}
+    </div>
 </div>
 
 <div class="overflow-x-hidden">
