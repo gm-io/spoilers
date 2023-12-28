@@ -70,6 +70,16 @@
     </div>
 </div>
 
+<div class="bg-y mt-4 flex justify-center">
+    <div class="w-fit flex flex-col">
+        <RadioGroup>
+            <RadioItem bind:group={value} name="justify" value={0}>TV</RadioItem>
+            <RadioItem bind:group={value} name="justify" value={1}>Movies</RadioItem>
+        </RadioGroup>
+    </div>
+
+</div>
+
 <div class="overflow-x-hidden">
     <pre>{JSON.stringify(data, null, 2)}</pre>
-</div> -->
+</div>
