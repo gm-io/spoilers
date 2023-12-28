@@ -49,6 +49,11 @@
         </div>
         <div class="details hidden w-3/5 pl-6 md:flex md:flex-col h-fit my-auto">
             <p class="h2 font-bold">{person.name}</p>
+            {#if person.known_for_department == "Directing"}
+                <div class="">Director</div>
+            {:else}
+                <div class="">Actor</div>
+            {/if}
         </div>
     </div>
 </div>
