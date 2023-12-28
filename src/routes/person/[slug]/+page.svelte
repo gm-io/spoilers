@@ -60,16 +60,16 @@
 </div>
 
 <div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-2">
-    <div class="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-3">
+    <div class="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-2 bg-red-5 pl-2 md:pl-0">
         {#each media as thismedia }
             {#if thismedia.media_type == "movie" && tv_or_movie=="movie" && thismedia.poster_path}
 
                 <div class="bg-black my-1 flex">
-                    <img class="h-44 w-32 lg:h-44 lg:w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.title}>
-                    <div class="flex flex-col">
-                        <div class="">{thismedia.title}</div>
-                        <div class="">{thismedia.release_date.slice(0,4)}</div>
-                        <div class="">As {thismedia.character}</div>
+                    <img class="h-32 w-26 max-w-26 min-w-26 lg:h-44 lg:w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.title}>
+                    <div class="flex flex-col h-fit my-auto pl-2 pr-2">
+                        <div class="text-sm font-bold">{thismedia.title}</div>
+                        <span class="text-xs">({thismedia.release_date.slice(0,4)})</span>
+                        <div class="text-xs mt-1 md:mt-2 font-thin">As {thismedia.character}</div>
                     </div>
                 </div>
             {:else if thismedia.media_type == "tv" && tv_or_movie=="tv" && thismedia.poster_path }
@@ -79,8 +79,4 @@
             {/if}
         {/each}
     </div>
-</div>
-
-<div class="overflow-x-hidden">
-    <pre>{JSON.stringify(data, null, 2)}</pre>
 </div>
