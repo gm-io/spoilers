@@ -30,7 +30,7 @@
 </div> -->
 
 <div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12">
-    <div class="flex relative flex-col md:flex-row rounded-xl py-7 2xl:py-14">
+    <div class="flex relative flex-col md:flex-row rounded-xl py-7 2xl:py-14 ">
         <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full md:bg-none">
             <div class="relative h-full w-full p-1 2xl:p-0 ">
                 {#if true }
@@ -41,19 +41,27 @@
         </div>
         <div class="mobile-details flex md:hidden flex-col pl-2">
             <p class="h3 font-bold">{person.name}</p>
+            {#if person.known_for_department == "Directing"}
+                <div class="">Director</div>
+            {:else}
+                <div class="">{person.gender!=1?"Actor":"Actress"}</div>
+            {/if}
         </div>
         <div class="flex">
             <div class="poster w-1/2 md:w-fit h-fit md:bg-white p-2 rounded-2xl ml-0 md:ml-4 2xl:ml-16">
-                <img class="h-64 md:h-96 border border-white rounded md:rounded-none" src={`https://www.themoviedb.org/t/p/original${person.profile_path}`} alt={data.title}>
+                <img class="h-64 md:h-72 border border-white rounded md:rounded-none" src={`https://www.themoviedb.org/t/p/original${person.profile_path}`} alt={person.name}>
             </div>
         </div>
-        <div class="details hidden w-3/5 pl-6 md:flex md:flex-col h-fit my-auto">
+        <div class="details hidden w-3/5 md:w-4/5   pl-6 md:flex md:flex-col h-fit my-auto">
             <p class="h2 font-bold">{person.name}</p>
             {#if person.known_for_department == "Directing"}
                 <div class="">Director</div>
             {:else}
-                <div class="">Actor</div>
+                <div class="">{person.gender!=1?"Actor":"Actress"}</div>
             {/if}
+            <div class="pr-0 md:pr-6">
+                <p class="text-xs xl:text-sm text-justify">{person.biography}</p>
+            </div>
         </div>
     </div>
 </div>
