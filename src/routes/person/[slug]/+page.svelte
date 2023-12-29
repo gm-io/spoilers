@@ -99,3 +99,7 @@
         {/each}
     </div>
 </div>
+<div class="flex flex-col bg-gray-900 px-4 mt-4 pb-8 pt-1 md:hidden ">
+    <div class="my-1">{person.name}</div>
+    <div class=" text-xs text-justify font-thin"> {person.biography}</div>
+</div>
