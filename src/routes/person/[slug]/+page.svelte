@@ -1,11 +1,21 @@
 <script>
     import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+    import { goto } from '$app/navigation';
+
     export let data;
     let person = data.data
     let media = data.data.appears_in.cast
     let value = 0
 
     let tv_or_movie = "movie"
+
+    let goto_media_page = (id_number,media_type) =>{
+        goto(`/${media_type}/${id_number}`)
+    }
+    let goto_media_page_keyHandler = (id_number,media_type,e) =>{
+        if (e.key == 'Enter' )
+            goto(`/${media_type}/${id_number}`)
+    }
 
 </script>
 
@@ -53,22 +63,24 @@
 <div class="mt-4 flex justify-center">
     <div class="w-fit flex flex-col">
         <RadioGroup>
-            <RadioItem bind:group={tv_or_movie} name="justify" value={"movie"}>Movies</RadioItem>
-            <RadioItem bind:group={tv_or_movie} name="justify" value={"tv"}>TV</RadioItem>
+            <RadioItem class="text-xs" bind:group={tv_or_movie} name="justify" value={"movie"}>Movies</RadioItem>
+            <RadioItem class="text-xs" bind:group={tv_or_movie} name="justify" value={"tv"}>TV</RadioItem>
         </RadioGroup>
     </div>
 </div>
 
-<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-2">
+<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-3">
     <div class="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-2 bg-red-5 pl-2 md:pl-0">
         {#each media as thismedia }
             {#if thismedia.media_type == "movie" && tv_or_movie=="movie" && thismedia.poster_path}
 
-                <div class="bg-black my-1 flex">
-                    <img class="h-32 w-26 max-w-26 min-w-26 lg:h-44 lg:w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.title}>
+                <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(thismedia.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(thismedia.id,'movie',e)}} class="bg-black my-1 flex hover:cursor-pointer hover:bg-gray-900 transition duration-100">
+                    <img class="h-32 w-26 max-w-26 min-w-26 lg:h-44 lg:w-32 lg:min-w-32 lg:max-w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.title}>
                     <div class="flex flex-col h-fit my-auto pl-2 pr-2">
                         <div class="text-sm font-bold">{thismedia.title}</div>
-                        <span class="text-xs">({thismedia.release_date.slice(0,4)})</span>
+                        {#if thismedia.release_date}
+                            <span class="text-xs">({thismedia.release_date.slice(0,4)})</span>
+                        {/if}
                         <div class="text-xs mt-1 md:mt-2 font-thin">As {thismedia.character}</div>
                     </div>
                 </div>
