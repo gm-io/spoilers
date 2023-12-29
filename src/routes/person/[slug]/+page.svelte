@@ -74,7 +74,7 @@
         {#each media as thismedia }
             {#if thismedia.media_type == "movie" && tv_or_movie=="movie" && thismedia.poster_path}
 
-                <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(thismedia.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(thismedia.id,'movie',e)}} class="bg-black my-1 flex hover:cursor-pointer hover:bg-gray-900 transition duration-100">
+                <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(thismedia.id,'movie')}} on:keyup={(e)=>{goto_media_page_keyHandler(thismedia.id,'movie',e)}} class="dark:bg-black bg-white  my-1 flex hover:cursor-pointer dark:hover:bg-gray-900 hover:bg-gray-200 transition duration-100">
                     <img class="h-32 w-26 max-w-26 min-w-26 lg:h-44 lg:w-32 lg:min-w-32 lg:max-w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.title}>
                     <div class="flex flex-col h-fit my-auto pl-2 pr-2">
                         <div class="text-sm font-bold">{thismedia.title}</div>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
             {:else if thismedia.media_type == "tv" && tv_or_movie=="tv" && thismedia.poster_path }
-            <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(thismedia.id,'tv')}} on:keyup={(e)=>{goto_media_page_keyHandler(thismedia.id,'tv',e)}} class="bg-black my-1 flex hover:cursor-pointer hover:bg-gray-900 transition duration-100">
+            <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(thismedia.id,'tv')}} on:keyup={(e)=>{goto_media_page_keyHandler(thismedia.id,'tv',e)}} class="dark:bg-black bg-white my-1 flex hover:cursor-pointer dark:hover:bg-gray-900 hover:bg-gray-200 transition duration-100">
                 <img class="h-32 w-26 max-w-26 min-w-26 lg:h-44 lg:w-32 lg:min-w-32 lg:max-w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.name}>
                 <div class="flex flex-col h-fit my-auto pl-2 pr-2">
                     <div class="text-sm font-bold">{thismedia.name}</div>
