@@ -32,7 +32,7 @@
 
         <div class="flex">
             <div class="poster w-1/3 md:w-fit h-fit md:bg-white p-2 rounded-2xl ml-16 md:ml-4 2xl:ml-16">
-                <img class="h-64 md:h-72 border border-white rounded md:rounded-none" src={`https://www.themoviedb.org/t/p/original${person.profile_path}`} alt={person.name}>
+                <img class="h-64 lg:h-72 border border-white rounded md:rounded-none" src={`https://www.themoviedb.org/t/p/original${person.profile_path}`} alt={person.name}>
             </div>
             <div class="mobile-details flex md:hidden flex-col pl-2 ">
                 <div class=" my-auto">
@@ -70,7 +70,7 @@
 </div>
 
 <div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-3">
-    <div class="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-2 bg-red-5 pl-2 md:pl-0">
+    <div class="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-2 bg-red-5 pl-2 md:pl-0">
         {#each media as thismedia }
             {#if thismedia.media_type == "movie" && tv_or_movie=="movie" && thismedia.poster_path}
 
@@ -85,9 +85,16 @@
                     </div>
                 </div>
             {:else if thismedia.media_type == "tv" && tv_or_movie=="tv" && thismedia.poster_path }
-                <div class="bg-green-900 my-1">
-                    <div class="">{thismedia.name}</div>
+            <div aria-pressed="false" role="button" tabindex="0" on:click={()=>{goto_media_page(thismedia.id,'tv')}} on:keyup={(e)=>{goto_media_page_keyHandler(thismedia.id,'tv',e)}} class="bg-black my-1 flex hover:cursor-pointer hover:bg-gray-900 transition duration-100">
+                <img class="h-32 w-26 max-w-26 min-w-26 lg:h-44 lg:w-32 lg:min-w-32 lg:max-w-32" src={`https://www.themoviedb.org/t/p/original${thismedia.poster_path}`} alt={thismedia.name}>
+                <div class="flex flex-col h-fit my-auto pl-2 pr-2">
+                    <div class="text-sm font-bold">{thismedia.name}</div>
+                    {#if thismedia.release_date}
+                        <span class="text-xs">({thismedia.release_date.slice(0,4)})</span>
+                    {/if}
+                    <div class="text-xs mt-1 md:mt-2 font-thin">As {thismedia.character}</div>
                 </div>
+            </div>
             {/if}
         {/each}
     </div>
