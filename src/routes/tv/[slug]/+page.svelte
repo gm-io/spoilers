@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12">
+<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12 bg-red-500">
     <div class="flex relative flex-col md:flex-row rounded-xl py-7 2xl:py-14">
         <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full md:bg-none">
             <div class="relative h-full w-full p-1 2xl:p-0 ">
@@ -14,7 +14,7 @@
                 {/if}
             </div>
         </div>
-        <div class="mobile-details flex md:hidden flex-col pl-2">
+        <div class="mobile-details flex md:hidden flex-col pl-2 ">
             <p class="h3 font-bold">{data.name}</p>
         </div>
         <div class="flex">
@@ -33,8 +33,19 @@
             </div>
     
         </div>
-        <div class="details hidden w-3/5 pl-6 md:flex md:flex-col h-fit my-auto">
-            <p class="h2 font-bold">{data.name}</p>
+        <div class="details hidden w-3/5 pl-6 md:flex md:flex-col h-fit my-auto bg-green-600">
+            <div class="">
+                <p class="h2 font-bold">{data.name}</p>
+            </div>
+            <div class="">
+                <p>Start date: {data.first_air_date.slice(0,4)}</p>
+                <p>End Date:</p>
+                <p>Status:</p>
+                <p>Run time:</p>
+                <p>Episodes:</p>
+                <p>Genre:</p>
+
+            </div>
             <!-- <div class="font-bold text-xl">
                 <p class="">Genre:<span class={details_css}>{data.genres.map((x)=> " "+x.name)}</span></p>
                 <p class="">Rating: <span class={details_css}>{parseFloat(data.vote_average).toFixed(1)}</span></p>
