@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12 bg-red-500">
+<div class="w-full px-0 md:px-4 lg:px-0 lg:w-9/12 2xl:w-9/12 mx-auto mt-6 md:mt-10 2xl:mt-12 ">
     <div class="flex relative flex-col md:flex-row rounded-xl py-7 2xl:py-14">
         <div class="absolute inset-0 overflow-hidden -z-10 h-full w-full md:bg-none">
             <div class="relative h-full w-full p-1 2xl:p-0 ">
@@ -33,20 +33,16 @@
             </div>
     
         </div>
-        <div class="details hidden w-3/5 pl-6 md:flex md:flex-col h-fit my-auto bg-green-600">
+        <div class="details hidden w-3/5 pl-6 md:flex md:flex-col h-fit my-auto s">
             <div class="mb-4">
                 <p class="h2 font-bold">{data.name}</p>
-                <p class="">{data.genres.map((x) => " " + x.name)}</p>
+                <p class="text-sm font-light dark:text-opacity-50 dark:text-white text-black text-opacity-80  mt-1">{data.genres.map((x) => " " + x.name)}</p>
             </div>
             <div class="details">
                 <p class="">First Air: {data.first_air_date.slice(0,4)}</p>
                 <p>End Date: __.__</p>
                 <p class="">Status: {data.status}</p>
                 <p class="">Runtime: {data.episode_run_time[0]} minutes</p>
-
-
-
-
                 <p class="">Seasons: {data.seasons.length}</p>
                 <!-- <p class="">Language: {[...data.languages]}</p> -->
                 <!-- <p class="">Type: {data.type}</p> -->
