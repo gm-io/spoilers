@@ -34,18 +34,35 @@
     
         </div>
         <div class="details hidden w-3/5 pl-6 md:flex md:flex-col h-fit my-auto bg-green-600">
-            <div class="">
+            <div class="mb-4">
                 <p class="h2 font-bold">{data.name}</p>
+                <p class="">{data.genres.map((x) => " " + x.name)}</p>
             </div>
-            <div class="">
-                <p>Start date: {data.first_air_date.slice(0,4)}</p>
-                <p>End Date:</p>
-                <p>Status:</p>
-                <p>Run time:</p>
-                <p>Episodes:</p>
-                <p>Genre:</p>
+            <div class="details">
+                <p class="">First Air: {data.first_air_date.slice(0,4)}</p>
+                <p>End Date: __.__</p>
+                <p class="">Status: {data.status}</p>
+                <p class="">Runtime: {data.episode_run_time[0]} minutes</p>
+
+
+
+
+                <p class="">Seasons: {data.seasons.length}</p>
+                <!-- <p class="">Language: {[...data.languages]}</p> -->
+                <!-- <p class="">Type: {data.type}</p> -->
+                <p class="">Networks:{data.networks.map((x) => " " + x.name)}</p>
+                <p class="">Rating: {parseFloat(data.vote_average).toFixed(1)}</p>
 
             </div>
+            <!-- <div class="">
+                <p>Start date: {data.first_air_date.slice(0,4)}</p>
+                <p>End Date: __.__</p>
+                <p>Status: {data.in_production?"Ongoing":"Ended"}</p>
+                <p>Run time: {data.episode_run_time[0]} mins</p>
+                <p>Episodes: {data.number_of_episodes} episodes</p>
+                <p>Genre: {data.genres.map(x => " "+x.name)} </p>
+
+            </div> -->
             <!-- <div class="font-bold text-xl">
                 <p class="">Genre:<span class={details_css}>{data.genres.map((x)=> " "+x.name)}</span></p>
                 <p class="">Rating: <span class={details_css}>{parseFloat(data.vote_average).toFixed(1)}</span></p>
